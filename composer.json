@@ -17,7 +17,8 @@
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.6",
-        "yiisoft/yii2-app-advanced": "*",
+        "yiisoft/yii2-bootstrap": "*",
+        "yiisoft/yii2-swiftmailer": "*"
         "yeesoft/yii2-yee-core": "*",
         "yeesoft/yii2-yee-auth": "*",
         "yeesoft/yii2-yee-user": "*",
