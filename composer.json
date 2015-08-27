@@ -6,11 +6,8 @@
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yeesoft/yii2/issues?state=open",
-        "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "http://www.yiiframework.com/wiki/",
-        "irc": "irc://irc.freenode.net/yii",
-        "source": "https://github.com/yiisoft/yii2"
+        "issues": "https://github.com/yeesoft/yii2-yee-cms/issues?state=open",
+        "source": "https://github.com/yeesoft/yii2-yee-cms"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -18,7 +15,7 @@
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.6",
         "yiisoft/yii2-bootstrap": "*",
-        "yiisoft/yii2-swiftmailer": "*"
+        "yiisoft/yii2-swiftmailer": "*",
         "yeesoft/yii2-yee-core": "*",
         "yeesoft/yii2-yee-auth": "*",
         "yeesoft/yii2-yee-user": "*",
