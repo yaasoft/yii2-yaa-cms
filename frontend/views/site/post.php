@@ -14,6 +14,6 @@ $this->params['breadcrumbs'][] = $post->title;
 
         <div><?= $post->content ?></div>
     </div>
-<?php if ($post->comment_status = Post::COMMENT_STATUS_OPEN): ?>
+<?php if ($post->comment_status == Post::COMMENT_STATUS_OPEN): ?>
     <?php echo Comments::widget(['model' => 'post', 'model_id' => $post->id]); ?>
 <?php endif; ?>

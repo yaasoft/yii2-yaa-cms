@@ -11,7 +11,6 @@ use yii\bootstrap\NavBar;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 
-Yii::$app->assetManager->forceCopy = true;
 AppAsset::register($this);
 ThemeAsset::register($this);
 ?>
@@ -58,7 +57,6 @@ ThemeAsset::register($this);
     ]);
     NavBar::end();
     ?>
-
 
     <div class="container">
         <div class="row">

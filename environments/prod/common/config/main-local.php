@@ -7,7 +7,7 @@ return [
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
-			'enableSchemaCache' => true,
+            'enableSchemaCache' => true,
             'schemaCacheDuration' => 3600,
         ],
         'mailer' => [
