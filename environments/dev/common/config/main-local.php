@@ -7,14 +7,21 @@ return [
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
+			'enableSchemaCache' => true,
+            'schemaCacheDuration' => 3600,
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
-            'viewPath' => '@common/mail',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.gmail.com',
+                'username' => 'yourname@gmail.com',
+                'password' => 'yourpassword',
+                'port' => '587',
+                'encryption' => 'tls',
+            ],
+            'htmlLayout' => '@vendor/yeesoft/yii2-yee-auth/views/mail/layouts/html',
+            'textLayout' => '@vendor/yeesoft/yii2-yee-auth/views/mail/layouts/text',
         ],
     ],
 ];

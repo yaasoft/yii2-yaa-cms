@@ -11,7 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'console\controllers',
-	'controllerMap' => [
+    'controllerMap' => [
         'migrate' => [
             'class' => 'console\controllers\MigrateController'
         ],

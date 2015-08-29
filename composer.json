@@ -6,7 +6,7 @@
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yeesoft/yii2-yee-cms/issues?state=open",
+        "issues": "https://github.com/yeesoft/yii2-yee-cms/issues/new",
         "source": "https://github.com/yeesoft/yii2-yee-cms"
     },
     "minimum-stability": "dev",

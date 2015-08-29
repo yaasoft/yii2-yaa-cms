@@ -1,6 +1,6 @@
 <?php
 return [
-    'vendorPath' => dirname(dirname(__DIR__)).'/vendor',
+    'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'bootstrap' => ['comments'],
     'modules' => [
         'yee' => [
@@ -8,20 +8,21 @@ return [
         ],
         'comments' => [
             'class' => 'yeesoft\comments\Module',
+            'userModel' => 'yeesoft\models\User',
         ],
     ],
     'components' => [
         'settings' => [
-            'class' => 'yeesoft\settings\components\Settings'
+            'class' => 'yeesoft\components\Settings'
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
             'class' => 'yeesoft\components\User',
-            'on afterLogin' => function($event) {
-				\yeesoft\models\UserVisitLog::newVisitor($event->identity->id);
-			}
+            'on afterLogin' => function ($event) {
+                \yeesoft\models\UserVisitLog::newVisitor($event->identity->id);
+            }
         ],
     ],
 ];

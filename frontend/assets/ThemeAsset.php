@@ -10,22 +10,25 @@ namespace frontend\assets;
 use Yii;
 use yii\web\AssetBundle;
 
-/**
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
- */
-class AppAsset extends AssetBundle
+class ThemeAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
+
     public $css = [
-        'css/site.css',
+        'css/theme.css',
     ];
     public $js = [
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'frontend\assets\AppAsset',
     ];
 
+    public function init()
+    {
+        parent::init();
+        if (isset(Yii::$app->view->theme->basePath)) {
+            $this->sourcePath = Yii::$app->view->theme->basePath;
+        }
+    }
 }

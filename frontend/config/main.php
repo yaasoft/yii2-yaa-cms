@@ -1,11 +1,11 @@
 <?php
 $params = array_merge(
-    require(__DIR__.'/../../common/config/params.php'), require(__DIR__.'/../../common/config/params-local.php'), require(__DIR__.'/params.php'), require(__DIR__.'/params-local.php')
+    require(__DIR__ . '/../../common/config/params.php'), require(__DIR__ . '/../../common/config/params-local.php'), require(__DIR__ . '/params.php'), require(__DIR__ . '/params-local.php')
 );
 
 return [
     'id' => 'app-frontend',
-    'homeUrl' => '/admin',
+    'homeUrl' => '/',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
@@ -15,6 +15,12 @@ return [
         ],
     ],
     'components' => [
+        'view' => [
+            'theme' => [
+                'class' => 'frontend\components\Theme',
+                'theme' => 'readable', //cerulean, cosmo, default, flatly, readable, simplex, united
+            ],
+        ],
         'request' => [
             'baseUrl' => '',
         ],
@@ -24,13 +30,15 @@ return [
             'enablePrettyUrl' => true,
             'rules' => array(
                 '<module:auth>/<action:\w+>' => '<module>/default/<action>',
-                '<action:\w+>' => 'site/<action>',
+                '' => 'site/index',
+                '<slug:[\w \-]+>' => 'site/index/',
+                '<action:[\w \-]+>' => 'site/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             )
         ],
         'authClientCollection' => [
             'class' => 'yii\authclient\Collection',
-			// !!! update this fileds in the following (if it is empty) - this is required for correct oauth work
+            // !!! update this fileds in the following (if it is empty) - this is required for correct oauth work
             'clients' => [
                 'google' => [
                     'class' => 'yii\authclient\clients\GoogleOAuth',

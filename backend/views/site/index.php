@@ -1,22 +1,24 @@
 <?php
-
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Yee Control Panel';
 ?>
 <div class="site-index">
-
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
     <div class="body-content">
+        <br/>
 
+        <div class="row">
 
+            <?= \yeesoft\comment\widgets\dashboard\Comments::widget(); ?>
 
+            <?= \yeesoft\widgets\dashboard\Info::widget(); ?>
+
+            <?= \yeesoft\media\widgets\dashboard\Media::widget(['position' => 'right']); ?>
+
+            <?= \yeesoft\post\widgets\dashboard\Posts::widget(); ?>
+
+            <?= \yeesoft\user\widgets\dashboard\Users::widget(); ?>
+
+        </div>
     </div>
 </div>
