@@ -8,10 +8,10 @@ class m150829_124523_init_demo extends Migration
     {
         $this->insert('menu', ['id' => 'main-menu', 'title' => 'Main Menu']);
 
-        $this->insert('menu_link', ['id' => 'home', 'menu_id' => 'main-menu', 'link' => '/', 'label' => 'Home', 'alwaysVisible' => 1, 'order' => 1]);
-        $this->insert('menu_link', ['id' => 'about', 'menu_id' => 'main-menu', 'link' => '/about', 'label' => 'About', 'alwaysVisible' => 1, 'order' => 9]);
-        $this->insert('menu_link', ['id' => 'test-page', 'menu_id' => 'main-menu', 'link' => '/test', 'label' => 'Test Page', 'alwaysVisible' => 1, 'order' => 2]);
-        $this->insert('menu_link', ['id' => 'contact', 'menu_id' => 'main-menu', 'link' => '/contact', 'label' => 'Contact', 'alwaysVisible' => 1, 'order' => 10]);
+        $this->insert('menu_link', ['id' => 'home', 'menu_id' => 'main-menu', 'link' => '/site/index', 'label' => 'Home', 'alwaysVisible' => 1, 'order' => 1]);
+        $this->insert('menu_link', ['id' => 'about', 'menu_id' => 'main-menu', 'link' => '/site/about', 'label' => 'About', 'alwaysVisible' => 1, 'order' => 9]);
+        $this->insert('menu_link', ['id' => 'test-page', 'menu_id' => 'main-menu', 'link' => '/site/test', 'label' => 'Test Page', 'alwaysVisible' => 1, 'order' => 2]);
+        $this->insert('menu_link', ['id' => 'contact', 'menu_id' => 'main-menu', 'link' => '/site/contact', 'label' => 'Contact', 'alwaysVisible' => 1, 'order' => 10]);
 
         $this->insert('page', ['slug' => 'test', 'title' => 'Test Page', 'author_id' => 1, 'status' => 1, 'comment_status' => 0,
             'published_at' => '1440720000', 'created_at' => '1440763228', 'updated_at' => '1440771930',

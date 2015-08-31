@@ -7,6 +7,8 @@ use yeesoft\page\models\Page;
 use yeesoft\post\models\Post;
 use Yii;
 use yii\data\Pagination;
+use frontend\actions\PostAction;
+use frontend\actions\PageAction;
 
 /**
  * Site controller
@@ -38,6 +40,7 @@ class SiteController extends \yeesoft\controllers\BaseController
      */
     public function actionIndex($slug = 'index')
     {
+        // display home page
         if (empty($slug) || $slug == 'index') {
 
             $query = Post::find()->where(['status' => Post::STATUS_PUBLISHED]);
@@ -58,34 +61,42 @@ class SiteController extends \yeesoft\controllers\BaseController
             ]);
         }
 
+        //try to display action from controller
         try {
             return $this->runAction($slug);
         } catch (\yii\base\InvalidRouteException $ex) {
 
         }
 
+        //try to display static page from datebase
         $page = Page::getDb()->cache(function ($db) use ($slug) {
             return Page::findOne(['slug' => $slug, 'status' => Page::STATUS_PUBLISHED]);
         }, 3600);
 
         if ($page) {
-            return $this->render('page', [
+            $pageAction = new PageAction($slug, $this,[
                 'slug' => $slug,
-                'page' => $page,
+                'page' => $page
             ]);
+
+            return $pageAction->run();
         }
 
+        //try to display post from datebase
         $post = Post::getDb()->cache(function ($db) use ($slug) {
             return Post::findOne(['slug' => $slug, 'status' => Post::STATUS_PUBLISHED]);
         }, 3600);
 
         if ($post) {
-            return $this->render('post', [
+            $postAction = new PostAction($slug, $this,[
                 'slug' => $slug,
-                'post' => $post,
+                'post' => $post
             ]);
+
+            return $postAction->run();
         }
 
+        //if nothing suitable was found then throw 404 error
         throw new \yii\web\NotFoundHttpException('Page not found.');
     }
 
