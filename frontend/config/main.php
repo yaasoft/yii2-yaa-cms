@@ -29,11 +29,11 @@ return [
             'showScriptName' => false,
             'enablePrettyUrl' => true,
             'rules' => array(
-                '<module:auth>/<action:\w+>' => '<module>/default/<action>',
-                '' => 'site/index',
-                '<slug:[\w \-]+>' => 'site/index/',
-                '<action:[\w \-]+>' => 'site/<action>',
-                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                '<language:([a-zA-Z]{2})?>/<module:auth>/<action:\w+>' => '<module>/default/<action>',
+                '<language:([a-zA-Z]{2})?>/<slug:[\w \-]+>' => 'site/index/',
+                '<language:([a-zA-Z]{2})?>/' => 'site/index',
+                '<language:([a-zA-Z]{2})?>/<action:[\w \-]+>' => 'site/<action>',
+                '<language:([a-zA-Z]{2})?>/<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             )
         ],
         'authClientCollection' => [
