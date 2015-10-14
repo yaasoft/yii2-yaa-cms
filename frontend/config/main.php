@@ -25,7 +25,7 @@ return [
             'baseUrl' => '',
         ],
         'urlManager' => [
-            'class' => 'yii\web\UrlManager',
+            'class' => 'yeesoft\components\MultilingualUrlManager',
             'showScriptName' => false,
             'enablePrettyUrl' => true,
             'rules' => array(
