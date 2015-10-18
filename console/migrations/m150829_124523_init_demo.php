@@ -18,14 +18,14 @@ class m150829_124523_init_demo extends Migration
             'content' => '<p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id ullamcorper nibh, id blandit ante. Suspendisse non ante commodo, finibus nibh at, sollicitudin felis. Aliquam interdum eros eget tempor porta. Quisque viverra velit magna, ac eleifend mi vehicula nec. Curabitur sollicitudin metus eget odio posuere pulvinar. Nullam vestibulum massa ac dolor mattis pharetra. Vestibulum finibus non massa ut cursus.</p>' .
                 '<p style="text-align: justify;">Proin eget ullamcorper elit, ac luctus ex. Pellentesque mattis nibh nec nunc fermentum lobortis. Cras malesuada ipsum eget massa pulvinar euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque, tortor in efficitur semper, tellus lorem blandit augue, sed euismod purus velit nec libero. Pellentesque dictum faucibus augue, ac rutrum velit. Quisque tristique neque sit amet turpis consectetur rutrum. Aliquam ac vulputate mauris.</p>']);
 
-        $this->insert('post', ['id' => '1', 'slug' => 'integer-id-ullamcorper-nibh', 'author_id' => 1, 'status' => 1, 'comment_status' => 1,
+        $this->insert('post', ['id' => '1', 'slug' => 'integer-id-ullamcorper-nibh', 'created_by' => 1, 'updated_by' => 1, 'status' => 1, 'comment_status' => 1,
             'published_at' => '1440720000', 'created_at' => '1440763228', 'updated_at' => '1440771930']);
 
         $this->insert('post_lang', ['post_id' => '1', 'title' => 'Integer id ullamcorper nibh', 'language' => 'en',
             'content' => '<p style="text-align: justify;">Integer id ullamcorper nibh, id blandit ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non ante commodo, finibus nibh at, sollicitudin felis. Aliquam interdum eros eget tempor porta. Quisque viverra velit magna, ac eleifend mi vehicula nec. Curabitur sollicitudin metus eget odio posuere pulvinar. Nullam vestibulum massa ac dolor mattis pharetra. Vestibulum finibus non massa ut cursus.</p>' .
                 '<p style="text-align: justify;">Proin eget ullamcorper elit, ac luctus ex. Pellentesque mattis nibh nec nunc fermentum lobortis. Cras malesuada ipsum eget massa pulvinar euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque, tortor in efficitur semper, tellus lorem blandit augue, sed euismod purus velit nec libero. Pellentesque dictum faucibus augue, ac rutrum velit. Quisque tristique neque sit amet turpis consectetur rutrum. Aliquam ac vulputate mauris.</p>']);
 
-        $this->insert('post', ['id' => '2', 'slug' => 'proin-eget-ullamcorper-elit', 'author_id' => 1, 'status' => 1, 'comment_status' => 1,
+        $this->insert('post', ['id' => '2', 'slug' => 'proin-eget-ullamcorper-elit', 'created_by' => 1, 'updated_by' => 1, 'status' => 1, 'comment_status' => 1,
             'published_at' => '1440720000', 'created_at' => '1440763228', 'updated_at' => '1440771930']);
 
         $this->insert('post_lang', ['post_id' => '2', 'title' => 'Proin eget ullamcorper elit', 'language' => 'en',
