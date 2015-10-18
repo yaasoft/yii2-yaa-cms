@@ -6,7 +6,8 @@ class m150829_124523_init_demo extends Migration
 {
     public function up()
     {
-        $this->insert('menu', ['id' => 'main-menu', 'title' => 'Main Menu']);
+        $this->insert('menu', ['id' => 'main-menu']);
+        $this->insert('menu_lang', ['menu_id' => 'main-menu','language' => 'en', 'title' => 'Main Menu']);
 
         $this->insert('menu_link', ['id' => 'home', 'menu_id' => 'main-menu', 'link' => '/site/index', 'label' => 'Home', 'alwaysVisible' => 1, 'order' => 1]);
         $this->insert('menu_link', ['id' => 'about', 'menu_id' => 'main-menu', 'link' => '/site/about', 'label' => 'About', 'alwaysVisible' => 1, 'order' => 9]);
