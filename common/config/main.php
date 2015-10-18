@@ -3,7 +3,7 @@ return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'bootstrap' => ['comments'],
     'language'   => 'en',
-    'sourceLanguage' => 'en_US',
+    'sourceLanguage' => 'en-US',
     'modules' => [
         'yee' => [
             'class' => 'yeesoft\Yee',
