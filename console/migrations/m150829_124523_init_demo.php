@@ -14,8 +14,10 @@ class m150829_124523_init_demo extends Migration
         $this->insert('menu_link', ['id' => 'test-page', 'menu_id' => 'main-menu', 'link' => '/site/test', 'label' => 'Test Page', 'alwaysVisible' => 1, 'order' => 2]);
         $this->insert('menu_link', ['id' => 'contact', 'menu_id' => 'main-menu', 'link' => '/site/contact', 'label' => 'Contact', 'alwaysVisible' => 1, 'order' => 10]);
 
-        $this->insert('page', ['slug' => 'test', 'title' => 'Test Page', 'author_id' => 1, 'status' => 1, 'comment_status' => 0,
-            'published_at' => '1440720000', 'created_at' => '1440763228', 'updated_at' => '1440771930',
+        $this->insert('page', ['id' => '1', 'slug' => 'test', 'created_by' => 1, 'updated_by' => 1, 'status' => 1, 'comment_status' => 0,
+            'published_at' => '1440720000', 'created_at' => '1440763228', 'updated_at' => '1440771930']);
+
+        $this->insert('page_lang', ['page_id' => '1', 'title' => 'Test Page', 'language' => 'en',
             'content' => '<p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id ullamcorper nibh, id blandit ante. Suspendisse non ante commodo, finibus nibh at, sollicitudin felis. Aliquam interdum eros eget tempor porta. Quisque viverra velit magna, ac eleifend mi vehicula nec. Curabitur sollicitudin metus eget odio posuere pulvinar. Nullam vestibulum massa ac dolor mattis pharetra. Vestibulum finibus non massa ut cursus.</p>' .
                 '<p style="text-align: justify;">Proin eget ullamcorper elit, ac luctus ex. Pellentesque mattis nibh nec nunc fermentum lobortis. Cras malesuada ipsum eget massa pulvinar euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque, tortor in efficitur semper, tellus lorem blandit augue, sed euismod purus velit nec libero. Pellentesque dictum faucibus augue, ac rutrum velit. Quisque tristique neque sit amet turpis consectetur rutrum. Aliquam ac vulputate mauris.</p>']);
 
