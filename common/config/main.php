@@ -1,7 +1,7 @@
 <?php
 return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
-    'bootstrap' => ['comments'],
+    'bootstrap' => ['comments', 'yee'],
     'language'   => 'en',
     'sourceLanguage' => 'en-US',
     'modules' => [
