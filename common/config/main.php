@@ -9,7 +9,7 @@ return [
             'class' => 'yeesoft\Yee',
         ],
         'comments' => [
-            'class' => 'yeesoft\comments\Module',
+            'class' => 'yeesoft\comments\Comments',
             'userModel' => 'yeesoft\models\User',
         ],
     ],
