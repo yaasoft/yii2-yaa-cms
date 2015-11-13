@@ -11,6 +11,7 @@ use yii\bootstrap\NavBar;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use yeesoft\models\Menu;
+use yeesoft\widgets\LanguageSelector;
 
 Yii::$app->assetManager->forceCopy = true;
 AppAsset::register($this);
@@ -23,7 +24,7 @@ ThemeAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode(Yii::$app->settings->get('general.title') . ' - ' . $this->title) ?></title>
+    <title><?= Html::encode(Yii::$app->settings->get('general.title', 'Yee Site',  Yii::$app->language) . ' - ' . $this->title) ?></title>
     <?php $this->head() ?>
 </head>
 <body>
@@ -32,7 +33,7 @@ ThemeAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->settings->get('general.title'),
+        'brandLabel' => Yii::$app->settings->get('general.title', 'Yee Site',  Yii::$app->language),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -53,9 +54,11 @@ ThemeAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
     ]);
+
+    echo LanguageSelector::widget(['display' => 'label', 'view' => 'pills']);
+
     NavBar::end();
     ?>
-
 
     <div class="container">
         <div class="row">
@@ -94,7 +97,7 @@ ThemeAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->settings->get('general.title')) ?> <?= date('Y') ?></p>
+        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->settings->get('general.title', 'Yee Site',  Yii::$app->language)) ?> <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?>, <?= yeesoft\Yee::powered() ?></p>
     </div>
