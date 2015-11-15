@@ -21,6 +21,7 @@
         "yeesoft/yii2-yee-user": "*",
         "yeesoft/yii2-yee-settings": "*",
         "yeesoft/yii2-yee-menu": "*",
+        "yeesoft/yii2-yee-translation": "*",
         "yeesoft/yii2-yee-post": "*",
         "yeesoft/yii2-yee-media": "*",
         "yeesoft/yii2-yee-page": "*",

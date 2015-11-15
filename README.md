@@ -45,7 +45,7 @@ Installation
        
   4. Create a new database and adjust the `components['db']` configuration in `common/config/main-local.php` accordingly.
 
-  5. Apply all migrations with console command `php yii migrate --migrationLookup=@yeesoft/yii2-yee-core/migrations/,@yeesoft/yii2-yee-auth/migrations/,@yeesoft/yii2-yee-settings/migrations/,@yeesoft/yii2-yee-menu/migrations/,@yeesoft/yii2-yee-user/migrations/,@yeesoft/yii2-yee-media/migrations/,@yeesoft/yii2-yee-post/migrations/,@yeesoft/yii2-yee-page/migrations/,@yeesoft/yii2-comments/migrations/,@yeesoft/yii2-yee-comment/migrations/`.
+  5. Apply all migrations with console command `php yii migrate --migrationLookup=@yeesoft/yii2-yee-core/migrations/,@yeesoft/yii2-yee-auth/migrations/,@yeesoft/yii2-yee-settings/migrations/,@yeesoft/yii2-yee-menu/migrations/,@yeesoft/yii2-yee-user/migrations/,@yeesoft/yii2-yee-translation/migrations/,@yeesoft/yii2-yee-media/migrations/,@yeesoft/yii2-yee-post/migrations/,@yeesoft/yii2-yee-page/migrations/,@yeesoft/yii2-comments/migrations/,@yeesoft/yii2-yee-comment/migrations/`.
 
   6. Configurate your mailer `['components']['mailer']` in `common/config/main-local.php`.
 
