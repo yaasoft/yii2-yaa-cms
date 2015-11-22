@@ -19,6 +19,9 @@ return [
         'menu' => [
             'class' => 'yeesoft\menu\MenuModule',
         ],
+        'translation' => [
+            'class' => 'yeesoft\translation\TranslationModule',
+        ],
         'user' => [
             'class' => 'yeesoft\user\UserModule',
         ],
