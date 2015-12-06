@@ -2,12 +2,12 @@
 
 namespace tests\codeception\frontend\models;
 
-use Yii;
-use tests\codeception\frontend\unit\DbTestCase;
+use Codeception\Specify;
+use common\models\User;
 use frontend\models\PasswordResetRequestForm;
 use tests\codeception\common\fixtures\UserFixture;
-use common\models\User;
-use Codeception\Specify;
+use tests\codeception\frontend\unit\DbTestCase;
+use Yii;
 
 class PasswordResetRequestFormTest extends DbTestCase
 {

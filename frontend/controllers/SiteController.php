@@ -2,13 +2,13 @@
 
 namespace frontend\controllers;
 
+use frontend\actions\PageAction;
+use frontend\actions\PostAction;
 use frontend\models\ContactForm;
 use yeesoft\page\models\Page;
 use yeesoft\post\models\Post;
 use Yii;
 use yii\data\Pagination;
-use frontend\actions\PostAction;
-use frontend\actions\PageAction;
 
 /**
  * Site controller
@@ -74,7 +74,7 @@ class SiteController extends \yeesoft\controllers\BaseController
         }, 3600);
 
         if ($page) {
-            $pageAction = new PageAction($slug, $this,[
+            $pageAction = new PageAction($slug, $this, [
                 'slug' => $slug,
                 'page' => $page
             ]);
@@ -88,7 +88,7 @@ class SiteController extends \yeesoft\controllers\BaseController
         }, 3600);
 
         if ($post) {
-            $postAction = new PostAction($slug, $this,[
+            $postAction = new PostAction($slug, $this, [
                 'slug' => $slug,
                 'post' => $post
             ]);

@@ -6,18 +6,18 @@ class m150829_124523_init_demo extends Migration
 {
     public function up()
     {
-        $this->insert('menu', ['id' => 'main-menu']);
-        $this->insert('menu_lang', ['menu_id' => 'main-menu','language' => 'en', 'title' => 'Main Menu']);
+        $this->insert('menu', ['id' => 'main-menu', 'created_by' => 1]);
+        $this->insert('menu_lang', ['menu_id' => 'main-menu', 'language' => 'en', 'created_by' => 1, 'title' => 'Main Menu']);
 
-        $this->insert('menu_link', ['id' => 'home', 'menu_id' => 'main-menu', 'link' => '/site/index', 'alwaysVisible' => 1, 'order' => 1]);
-        $this->insert('menu_link', ['id' => 'about', 'menu_id' => 'main-menu', 'link' => '/site/about', 'alwaysVisible' => 1, 'order' => 9]);
-        $this->insert('menu_link', ['id' => 'test-page', 'menu_id' => 'main-menu', 'link' => '/site/test', 'alwaysVisible' => 1, 'order' => 2]);
-        $this->insert('menu_link', ['id' => 'contact', 'menu_id' => 'main-menu', 'link' => '/site/contact', 'alwaysVisible' => 1, 'order' => 10]);
+        $this->insert('menu_link', ['id' => 'home', 'menu_id' => 'main-menu', 'link' => '/site/index', 'alwaysVisible' => 1, 'created_by' => 1, 'order' => 1]);
+        $this->insert('menu_link', ['id' => 'about', 'menu_id' => 'main-menu', 'link' => '/site/about', 'alwaysVisible' => 1, 'created_by' => 1, 'order' => 9]);
+        $this->insert('menu_link', ['id' => 'test-page', 'menu_id' => 'main-menu', 'link' => '/site/test', 'alwaysVisible' => 1, 'created_by' => 1, 'order' => 2]);
+        $this->insert('menu_link', ['id' => 'contact', 'menu_id' => 'main-menu', 'link' => '/site/contact', 'alwaysVisible' => 1, 'created_by' => 1, 'order' => 10]);
 
-        $this->insert('menu_link_lang', ['link_id' => 'home', 'label' => 'Home', 'language' => 'en' ]);
-        $this->insert('menu_link_lang', ['link_id' => 'about', 'label' => 'About', 'language' => 'en' ]);
-        $this->insert('menu_link_lang', ['link_id' => 'test-page', 'label' => 'Test Page', 'language' => 'en' ]);
-        $this->insert('menu_link_lang', ['link_id' => 'contact', 'label' => 'Contact', 'language' => 'en' ]);
+        $this->insert('menu_link_lang', ['link_id' => 'home', 'label' => 'Home', 'language' => 'en']);
+        $this->insert('menu_link_lang', ['link_id' => 'about', 'label' => 'About', 'language' => 'en']);
+        $this->insert('menu_link_lang', ['link_id' => 'test-page', 'label' => 'Test Page', 'language' => 'en']);
+        $this->insert('menu_link_lang', ['link_id' => 'contact', 'label' => 'Contact', 'language' => 'en']);
 
         $this->insert('page', ['id' => '1', 'slug' => 'test', 'created_by' => 1, 'updated_by' => 1, 'status' => 1, 'comment_status' => 0,
             'published_at' => '1440720000', 'created_at' => '1440763228', 'updated_at' => '1440771930']);

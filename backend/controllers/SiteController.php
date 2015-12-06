@@ -1,12 +1,10 @@
 <?php
+
 namespace backend\controllers;
 
-use yeesoft\controllers\admin\BaseController;
+use yeesoft\controllers\admin\DashboardController;
 
-class SiteController extends BaseController
+class SiteController extends DashboardController
 {
-    public function actionIndex()
-    {
-        return $this->render('index');
-    }
+
 }

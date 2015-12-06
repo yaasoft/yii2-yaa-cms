@@ -25,10 +25,10 @@ $this->title = 'Homepage';
                 <h2><?= $post->title ?></h2>
 
                 <p><?= mb_substr($post->content, 0, 256, 'UTF-8'); ?>...</p>
-                <a href="<?= yii\helpers\Url::to($post->slug) ?>">Read more</a>
-                <span
-                    class="pull-right">Published <b><?= date(Yii::$app->settings->get('general.dateformat'), $post->published_at) ?></b></span>
-
+                <a href="<?= yii\helpers\Url::to(["/site/{$post->slug}"]) ?>">Read more</a>
+                <span class="pull-right">
+                    Published <b><?= Yii::$app->formatter->asDate($post->published_at) ?></b>
+                </span>
             </div>
         <?php endforeach; ?>
 
