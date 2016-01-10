@@ -35,6 +35,7 @@
     "yeesoft/yii2-yee-post": "*",
     "yeesoft/yii2-yee-media": "*",
     "yeesoft/yii2-yee-page": "*",
+    "yeesoft/yii2-yee-seo": "*",
     "yeesoft/yii2-comments": "*",
     "yeesoft/yii2-yee-comment": "*"
   },

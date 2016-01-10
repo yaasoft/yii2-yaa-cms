@@ -5,6 +5,9 @@ return [
     'user.passwordResetTokenExpire' => 3600,
     'version' => '0.1-a',
     'languages' => [
-        'en' => 'English',
+        'en-US' => 'English',
+    ],
+    'languageRedirects' => [
+        'en-US' => 'en',
     ],
 ];

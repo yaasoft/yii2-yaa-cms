@@ -39,6 +39,9 @@ return [
         'page' => [
             'class' => 'yeesoft\page\PageModule',
         ],
+        'seo' => [
+            'class' => 'yeesoft\seo\SeoModule',
+        ],
         'comment' => [
             'class' => 'yeesoft\comment\CommentModule',
         ],
@@ -48,9 +51,10 @@ return [
             'baseUrl' => '/admin',
         ],
         'urlManager' => [
-            'class' => 'yii\web\UrlManager',
+            'class' => 'yeesoft\web\MultilingualUrlManager',
             'showScriptName' => false,
             'enablePrettyUrl' => true,
+            'multilingualRules' => false,
             'rules' => array(
                 '<module:\w+>/' => '<module>/default/index',
                 '<module:\w+>/<action:\w+>/<id:\d+>' => '<module>/default/<action>',

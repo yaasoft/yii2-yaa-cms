@@ -20,21 +20,33 @@ return [
                 'class' => 'frontend\components\Theme',
                 'theme' => 'readable', //cerulean, cosmo, default, flatly, readable, simplex, united
             ],
+            'as seo' => [
+                'class' => 'yeesoft\seo\components\SeoViewBehavior',
+            ]
+        ],
+        'seo' => [
+            'class' => 'yeesoft\seo\components\Seo',
         ],
         'request' => [
             'baseUrl' => '',
         ],
         'urlManager' => [
-            'class' => 'yeesoft\components\MultilingualUrlManager',
+            'class' => 'yeesoft\web\MultilingualUrlManager',
             'showScriptName' => false,
             'enablePrettyUrl' => true,
             'rules' => array(
-                '<language:([a-zA-Z]{2})?>/<module:auth>/<action:\w+>' => '<module>/default/<action>',
-                '<language:([a-zA-Z]{2})?>/<slug:[\w \-]+>' => 'site/index/',
-                '<language:([a-zA-Z]{2})?>/' => 'site/index',
-                '<language:([a-zA-Z]{2})?>/<action:[\w \-]+>' => 'site/<action>',
-                '<language:([a-zA-Z]{2})?>/<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-            )
+                '<module:auth>/<action:(oauth|logout|captcha)>' => '<module>/default/<action>',
+            ),
+            'multilingualRules' => [
+                '<module:auth>/<action:\w+>' => '<module>/default/<action>',
+                '<slug:[\w \-]+>' => 'site/index/',
+                '/' => 'site/index',
+                '<action:[\w \-]+>' => 'site/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+            ],
+            'nonMultilingualUrls' => [
+                'auth/default/oauth',
+            ],
         ],
         'authClientCollection' => [
             'class' => 'yii\authclient\Collection',

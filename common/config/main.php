@@ -2,7 +2,7 @@
 return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'bootstrap' => ['comments', 'yee'],
-    'language' => 'en',
+    'language' => 'en-US',
     'sourceLanguage' => 'en-US',
     'modules' => [
         'yee' => [

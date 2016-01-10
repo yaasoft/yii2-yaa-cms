@@ -24,7 +24,7 @@ ThemeAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode(Yii::$app->settings->get('general.title', 'Yee Site', Yii::$app->language) . ' - ' . $this->title) ?></title>
+    <?= $this->renderMetaTags() ?>
     <?php $this->head() ?>
 </head>
 <body>
