@@ -35,7 +35,8 @@ return [
             'showScriptName' => false,
             'enablePrettyUrl' => true,
             'rules' => array(
-                '<module:auth>/<action:(oauth|logout|captcha)>' => '<module>/default/<action>',
+                '<module:auth>/<action:(logout|captcha)>' => '<module>/default/<action>',
+                '<module:auth>/<action:(oauth)>/<authclient:\w+>' => '<module>/default/<action>',
             ),
             'multilingualRules' => [
                 '<module:auth>/<action:\w+>' => '<module>/default/<action>',
@@ -66,6 +67,21 @@ return [
                     'class' => 'yii\authclient\clients\Twitter',
                     'consumerKey' => '',
                     'consumerSecret' => '',
+                ],
+                'github' => [
+                    'class' => 'yii\authclient\clients\GitHub',
+                    'clientId' => '',
+                    'clientSecret' => '',
+                ],
+                'linkedin' => [
+                    'class' => 'yii\authclient\clients\LinkedIn',
+                    'clientId' => '',
+                    'clientSecret' => '',
+                ],
+                'vkontakte' => [
+                    'class' => 'yii\authclient\clients\VKontakte',
+                    'clientId' => '',
+                    'clientSecret' => '',
                 ],
             ],
         ],

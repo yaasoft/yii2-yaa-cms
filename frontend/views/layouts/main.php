@@ -5,13 +5,13 @@
 use common\widgets\Alert;
 use frontend\assets\AppAsset;
 use frontend\assets\ThemeAsset;
-use yeesoft\models\Menu;
-use yeesoft\widgets\LanguageSelector;
 use yeesoft\widgets\Nav as Navigation;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
+use yeesoft\models\Menu;
+use yeesoft\widgets\LanguageSelector;
 
 Yii::$app->assetManager->forceCopy = true;
 AppAsset::register($this);
@@ -33,7 +33,7 @@ ThemeAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->settings->get('general.title', 'Yee Site', Yii::$app->language),
+        'brandLabel' => Yii::$app->settings->get('general.title', 'Yee Site',  Yii::$app->language),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -41,12 +41,17 @@ ThemeAsset::register($this);
     ]);
     $menuItems = Menu::getMenuItems('main-menu');
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/auth/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/auth/login']];
+        $menuItems[] = ['label' => Yii::t('yee/auth', 'Signup'), 'url' => \yii\helpers\Url::to(['/auth/default/signup']) ];
+        $menuItems[] = ['label' => Yii::t('yee/auth', 'Login'), 'url' => ['/auth/default/login']];
     } else {
         $menuItems[] = [
-            'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-            'url' => ['/auth/logout'],
+            'label' => Yii::$app->user->identity->username,
+            'url' => ['/auth/default/profile'],
+        ];
+
+        $menuItems[] = [
+            'label' => Yii::t('yee/auth', 'Logout'),
+            'url' => ['/auth/default/logout', 'language' => false],
             'linkOptions' => ['data-method' => 'post']
         ];
     }
@@ -65,7 +70,6 @@ ThemeAsset::register($this);
             <div class="col-md-3">
                 <div class="hidden-xs">
                     <?php
-                    Yii::$app->cache->flush();
                     if ($this->beginCache('main-menu', ['duration' => 3600])) {
                         echo Navigation::widget([
                             'encodeLabels' => false,
@@ -83,11 +87,7 @@ ThemeAsset::register($this);
                 </div>
             </div>
             <div class="col-md-9">
-                <?=
-                Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ])
-                ?>
+                <?= Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []]) ?>
                 <?= Alert::widget() ?>
                 <?= $content ?>
             </div>
@@ -97,8 +97,7 @@ ThemeAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->settings->get('general.title', 'Yee Site', Yii::$app->language)) ?> <?= date('Y') ?></p>
-
+        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->settings->get('general.title', 'Yee Site',  Yii::$app->language)) ?> <?= date('Y') ?></p>
         <p class="pull-right"><?= Yii::powered() ?>, <?= yeesoft\Yee::powered() ?></p>
     </div>
 </footer>

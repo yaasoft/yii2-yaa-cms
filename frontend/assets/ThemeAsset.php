@@ -22,6 +22,7 @@ class ThemeAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'frontend\assets\AppAsset',
+        'rmrevin\yii\fontawesome\AssetBundle',
     ];
 
     public function init()
@@ -30,5 +31,21 @@ class ThemeAsset extends AssetBundle
         if (isset(Yii::$app->view->theme->basePath)) {
             $this->sourcePath = Yii::$app->view->theme->basePath;
         }
+    }
+
+    /**
+     * Registers this asset bundle with a view.
+     * @param \yii\web\View $view the view to be registered with
+     * @return static the registered asset bundle instance
+     */
+    public static function register($view)
+    {
+        $js = <<<JS
+            $('[data-toggle="tooltip"]').tooltip()
+JS;
+
+        $view->registerJs($js, View::POS_READY);
+
+        return parent::register($view);
     }
 }
