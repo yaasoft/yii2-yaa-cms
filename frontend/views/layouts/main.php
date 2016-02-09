@@ -5,13 +5,13 @@
 use common\widgets\Alert;
 use frontend\assets\AppAsset;
 use frontend\assets\ThemeAsset;
+use yeesoft\models\Menu;
+use yeesoft\widgets\LanguageSelector;
 use yeesoft\widgets\Nav as Navigation;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
-use yeesoft\models\Menu;
-use yeesoft\widgets\LanguageSelector;
 
 Yii::$app->assetManager->forceCopy = true;
 AppAsset::register($this);
@@ -33,7 +33,7 @@ ThemeAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->settings->get('general.title', 'Yee Site',  Yii::$app->language),
+        'brandLabel' => Yii::$app->settings->get('general.title', 'Yee Site', Yii::$app->language),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -41,7 +41,7 @@ ThemeAsset::register($this);
     ]);
     $menuItems = Menu::getMenuItems('main-menu');
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => Yii::t('yee/auth', 'Signup'), 'url' => \yii\helpers\Url::to(['/auth/default/signup']) ];
+        $menuItems[] = ['label' => Yii::t('yee/auth', 'Signup'), 'url' => \yii\helpers\Url::to(['/auth/default/signup'])];
         $menuItems[] = ['label' => Yii::t('yee/auth', 'Login'), 'url' => ['/auth/default/login']];
     } else {
         $menuItems[] = [
@@ -97,7 +97,8 @@ ThemeAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->settings->get('general.title', 'Yee Site',  Yii::$app->language)) ?> <?= date('Y') ?></p>
+        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->settings->get('general.title', 'Yee Site', Yii::$app->language)) ?> <?= date('Y') ?></p>
+
         <p class="pull-right"><?= Yii::powered() ?>, <?= yeesoft\Yee::powered() ?></p>
     </div>
 </footer>

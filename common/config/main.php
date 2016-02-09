@@ -11,9 +11,9 @@ return [
         'comments' => [
             'class' => 'yeesoft\comments\Comments',
             'userModel' => 'yeesoft\models\User',
-            'userAvatar' => function($user_id){
+            'userAvatar' => function ($user_id) {
                 $user = yeesoft\models\User::findIdentity((int)$user_id);
-                if($user instanceof yeesoft\models\User){
+                if ($user instanceof yeesoft\models\User) {
                     return $user->getAvatar();
                 }
                 return false;

@@ -56,15 +56,18 @@ return [
             'enablePrettyUrl' => true,
             'multilingualRules' => false,
             'rules' => array(
+                //add here local frontend controllers
+                '<controller:(test)>' => '<controller>/index',
+                '<controller:(test)>/<id:\d+>' => '<controller>/view',
+                '<controller:(test)>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:(test)>/<action:\w+>' => '<controller>/<action>',
+                //yee cms and other modules routes
                 '<module:\w+>/' => '<module>/default/index',
                 '<module:\w+>/<action:\w+>/<id:\d+>' => '<module>/default/<action>',
                 '<module:\w+>/<action:(create)>' => '<module>/default/<action>',
                 '<module:\w+>/<controller:\w+>' => '<module>/<controller>/index',
                 '<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
                 '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
-                '<controller:\w+>/<id:\d+>' => '<controller>/view',
-                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             )
         ],
         'log' => [

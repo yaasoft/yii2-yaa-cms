@@ -109,6 +109,6 @@ a:focus {
 }
 
 .post img, .page img {
-    border: 1px solid #333;
+    border: 1px solid #ddd;
     margin: 7px 7px 0 7px;
 }

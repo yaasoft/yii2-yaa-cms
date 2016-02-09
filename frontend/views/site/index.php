@@ -24,11 +24,12 @@ $this->title = 'Homepage';
             <div class="post clearfix">
                 <h2><?= $post->title ?></h2>
 
-                <p><?= mb_substr($post->content, 0, 256, 'UTF-8'); ?>...</p>
-                <a href="<?= yii\helpers\Url::to(["/site/{$post->slug}"]) ?>">Read more</a>
-                <span class="pull-right">
-                    Published <b><?= Yii::$app->formatter->asDate($post->published_at) ?></b>
-                </span>
+                <p class="text-justify">
+                    <?= $post->getThumbnail(['class' => 'thumbnail pull-left', 'style' => 'width: 160px; margin: 0 7px 7px 0']) ?>
+                    <?= $post->shortContent ?>
+                </p>
+                <a href="<?= yii\helpers\Url::to(["/site/{$post->slug}"]) ?>"><?= Yii::t('yee', 'Read more') ?></a>
+                <span class="pull-right"><?= Yii::t('yee', 'Published') ?> <b><?= $post->publishedDate ?></b></span>
             </div>
         <?php endforeach; ?>
 

@@ -40,8 +40,8 @@ class m160131_124523_init_demo extends Migration
             'content' => '<p style="text-align: justify;">Suspendisse non ante commodo, finibus nibh at, sollicitudin felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id ullamcorper nibh, id blandit ante. Aliquam interdum eros eget tempor porta. Quisque viverra velit magna, ac eleifend mi vehicula nec. Curabitur sollicitudin metus eget odio posuere pulvinar. Nullam vestibulum massa ac dolor mattis pharetra. Vestibulum finibus non massa ut cursus.</p>' .
                 '<p style="text-align: justify;">Proin eget ullamcorper elit, ac luctus ex. Pellentesque mattis nibh nec nunc fermentum lobortis. Cras malesuada ipsum eget massa pulvinar euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque, tortor in efficitur semper, tellus lorem blandit augue, sed euismod purus velit nec libero. Pellentesque dictum faucibus augue, ac rutrum velit. Quisque tristique neque sit amet turpis consectetur rutrum. Aliquam ac vulputate mauris.</p>']);
 
-        $this->insert('seo', [ 'url' => '/en', 'title' => 'Homepage', 'author' => 'Site Owner', 'keywords' => 'yii2, cms, yeecms', 'description' => 'Seo meta description', 'index' => 1, 'follow' => 1, 'created_by' => 1, 'updated_by' => 1, 'created_at' => '1452544164', 'updated_at' => '1452545049']);
-    
+        $this->insert('seo', ['url' => '/en', 'title' => 'Homepage', 'author' => 'Site Owner', 'keywords' => 'yii2, cms, yeecms', 'description' => 'Seo meta description', 'index' => 1, 'follow' => 1, 'created_by' => 1, 'updated_by' => 1, 'created_at' => '1452544164', 'updated_at' => '1452545049']);
+
     }
 
     public function down()
