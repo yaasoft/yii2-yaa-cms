@@ -56,6 +56,7 @@ ThemeAsset::register($this);
         ];
     }
     echo Nav::widget([
+        'encodeLabels' => false,
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
     ]);
