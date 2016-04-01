@@ -5,39 +5,29 @@ use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 
-$this->title = 'Homepage';
+$this->title = $category->title;
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-index">
-
-    <?php if (Yii::$app->getRequest()->getQueryParam('page') <= 1) : ?>
-        <div class="jumbotron">
-            <h1>Congratulations!</h1>
-
-            <p class="lead">You have successfully created your Yii-powered application.</p>
-
-            <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-        </div>
-    <?php endif; ?>
+<div class="category-index">
 
     <div class="body-content">
+
+        <h2><?= $category->title ?></h2>
 
         <?php /* @var $post yeesoft\post\models\Post */ ?>
         <?php foreach ($posts as $post) : ?>
             <div class="post clearfix">
-                <h2>
+                <h3>
                     <a href="<?= Url::to(["/site/{$post->slug}"]) ?>">
                         <?= $post->title ?>
                     </a>
-                </h2>
+                </h3>
 
                 <p class="text-justify">
                     <?= $post->getThumbnail(['class' => 'thumbnail pull-left', 'style' => 'width: 160px; margin: 0 7px 7px 0']) ?>
                     <?= $post->shortContent ?>
                 </p>
                 <div class="clearfix"></div>
-                <?php if($post->category): ?>
-                    <?= Yii::t('yee/post', 'Posted in')?> <a href="<?= Url::to(['/category/index', 'slug' => $post->category->slug]) ?>">"<?= $post->category->title ?>"</a>
-                <?php endif; ?>
                 <span class="pull-right"><?= Yii::t('yee', 'Published') ?> <b><?= $post->publishedDate ?></b></span>
 
             </div>
