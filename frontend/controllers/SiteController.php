@@ -75,8 +75,10 @@ class SiteController extends \yeesoft\controllers\BaseController
 
         if ($page) {
             $pageAction = new PageAction($slug, $this, [
-                'slug' => $slug,
-                'page' => $page
+                'slug'   => $slug,
+                'page'   => $page
+                'view'   => $page->view,
+                'layout' => $page->layout,
             ]);
 
             return $pageAction->run();
