@@ -89,8 +89,10 @@ class SiteController extends \yeesoft\controllers\BaseController
 
         if ($post) {
             $postAction = new PostAction($slug, $this, [
-                'slug' => $slug,
-                'post' => $post
+                'slug'   => $slug,
+                'post'   => $post,
+                'view'   => $post->view,
+                'layout' => $post->layout,
             ]);
 
             return $postAction->run();
