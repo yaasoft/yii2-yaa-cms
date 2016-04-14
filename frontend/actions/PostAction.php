@@ -9,10 +9,13 @@ class PostAction extends \yii\web\ViewAction
 {
     public $slug;
     public $post;
+    public $view = 'post';
+    public $layout = 'main';
 
     public function run()
     {
         $this->controller->action = $this;
-        return $this->controller->render('post', ['post' => $this->post]);
+        $this->controller->layout = "//{$this->layout}";
+        return $this->controller->render($this->view, ['post' => $this->post]);
     }
 }
