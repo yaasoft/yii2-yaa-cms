@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @link http://www.yee-soft.com/
  */
@@ -27,8 +26,8 @@ use yii\base\Security;
  *
  * @author Taras Makitra <makitrataras@gmail.com>
  */
-class InitAdminController extends Controller {
-
+class InitAdminController extends Controller
+{
     /**
      * @var string the default command action.
      */
@@ -51,6 +50,11 @@ class InitAdminController extends Controller {
     public $password;
 
     /**
+     * @var string email of root user.
+     */
+    public $email;
+
+    /**
      * @var Connection|string the DB connection object or the application
      * component ID of the DB connection.
      */
@@ -59,7 +63,8 @@ class InitAdminController extends Controller {
     /**
      * @inheritdoc
      */
-    public function options($actionId) {
+    public function options($actionId)
+    {
         return array_merge(parent::options($actionId), ['username', 'password', 'db']);
     }
 
@@ -71,7 +76,8 @@ class InitAdminController extends Controller {
      * @throws Exception if db component isn't configured
      * @return boolean whether the action should continue to be executed.
      */
-    public function beforeAction($action) {
+    public function beforeAction($action)
+    {
         if (parent::beforeAction($action)) {
 
             if (is_string($this->db)) {
@@ -83,7 +89,7 @@ class InitAdminController extends Controller {
 
             echo "Yee CMS Root User Init Tool\n";
             if (isset($this->db->dsn)) {
-                echo "Database Connection: " . $this->db->dsn . "\n\n";
+                echo "Database Connection: ".$this->db->dsn."\n\n";
             }
             return true;
         } else {
@@ -101,15 +107,14 @@ class InitAdminController extends Controller {
      * ~~~
      *
      */
-    public function actionInit() {
-        
+    public function actionInit()
+    {
         if (!$this->canUpdateRootUser()) {
             echo "Root user has already been initialized.\n";
 
             return;
         }
-        
-        
+
         if (!$this->username) {
             $this->username = $this->prompt('Enter root user name: ', [
                 'required' => true,
@@ -122,7 +127,6 @@ class InitAdminController extends Controller {
 
             return;
         }
-        
 
         if (!$this->password) {
             $this->password = $this->prompt('Enter password for root user: ', [
@@ -136,9 +140,21 @@ class InitAdminController extends Controller {
             return;
         }
 
+        if (!$this->email) {
+            $this->email = $this->prompt('Enter email of root user: ', [
+                'required' => true,
+            ]);
+        }
+
+        if (!$this->validateEmail($this->email)) {
+            echo "Invalid email.\n";
+
+            return;
+        }
+
         if ($this->confirm("Create root user '{$this->username}' with password '{$this->password}' ?")) {
 
-            if (!$this->createUser($this->username, $this->password)) {
+            if (!$this->createUser($this->username, $this->password, $this->email)) {
                 echo "\nCreation failed.\n";
 
                 return;
@@ -148,7 +164,8 @@ class InitAdminController extends Controller {
         }
     }
 
-    private function validateUsername($username) {
+    private function validateUsername($username)
+    {
         if (strlen($username) < 4) {
             return false;
         }
@@ -160,7 +177,8 @@ class InitAdminController extends Controller {
         return true;
     }
 
-    private function validatePassword($password) {
+    private function validatePassword($password)
+    {
         if (strlen($password) < 6) {
             return false;
         }
@@ -172,31 +190,40 @@ class InitAdminController extends Controller {
         return true;
     }
 
-    private function canUpdateRootUser() {
-        $user = $this->db->createCommand('SELECT * FROM {{%user}} WHERE id = 1')->queryOne(\PDO::FETCH_OBJ);
-        
-        return ($user && (empty($user->password_hash) || $this->allowOverwrite));
-    }
-    
-    private function createUser($username, $password) {
-
-        if ($this->canUpdateRootUser()) {
-            $security = new Security();
-            $password_hash = $security->generatePasswordHash($password);
-
-
-            $result = $this->db->createCommand()->update('{{%user}}', [
-                'username' => $username,
-                'password_hash' => $password_hash,
-            ], [ 'id' => '1'])->execute();
-            
-            if($result > 0){
-                return true;
-            }
-            
+    private function validateEmail($email)
+    {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return true;
         }
 
         return false;
     }
 
+    private function canUpdateRootUser()
+    {
+        $user = $this->db->createCommand('SELECT * FROM {{%user}} WHERE id = 1')->queryOne(\PDO::FETCH_OBJ);
+
+        return ($user && (empty($user->password_hash) || $this->allowOverwrite));
+    }
+
+    private function createUser($username, $password, $email)
+    {
+
+        if ($this->canUpdateRootUser()) {
+            $security      = new Security();
+            $password_hash = $security->generatePasswordHash($password);
+
+            $result = $this->db->createCommand()->update('{{%user}}', [
+                    'username' => $username,
+                    'password_hash' => $password_hash,
+                    'email' => $email,
+                    ], [ 'id' => '1'])->execute();
+
+            if ($result > 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
