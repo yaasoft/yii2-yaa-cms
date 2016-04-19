@@ -47,6 +47,8 @@ Installation
 
   5. Apply all migrations with console command `php yii migrate --migrationLookup=@yeesoft/yii2-yee-core/migrations/,@yeesoft/yii2-yee-auth/migrations/,@yeesoft/yii2-yee-settings/migrations/,@yeesoft/yii2-yee-menu/migrations/,@yeesoft/yii2-yee-user/migrations/,@yeesoft/yii2-yee-translation/migrations/,@yeesoft/yii2-yee-media/migrations/,@yeesoft/yii2-yee-post/migrations/,@yeesoft/yii2-yee-page/migrations/,@yeesoft/yii2-comments/migrations/,@yeesoft/yii2-yee-comment/migrations/,@yeesoft/yii2-yee-seo/migrations/`.
 
-  6. Configurate your mailer `['components']['mailer']` in `common/config/main-local.php`.
+  6. Init root user with console command `php yii init-admin`.
+
+  7. Configurate your mailer `['components']['mailer']` in `common/config/main-local.php`.
 
 #####Your `Yee CMS` application is installed. Visit your site, the site should work and message _Congratulations! You have successfully created your Yii-powered application_ should be displayed.
