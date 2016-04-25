@@ -55,6 +55,11 @@ class InitAdminController extends Controller
     public $email;
 
     /**
+     * @var boolean whether to execute the migration in an interactive mode.
+     */
+    public $interactive = true;
+
+    /**
      * @var Connection|string the DB connection object or the application
      * component ID of the DB connection.
      */
@@ -65,7 +70,7 @@ class InitAdminController extends Controller
      */
     public function options($actionId)
     {
-        return array_merge(parent::options($actionId), ['username', 'password', 'db']);
+        return array_merge(parent::options($actionId), ['allowOverwrite', 'interactive', 'username', 'password', 'email', 'db']);
     }
 
     /**
@@ -152,7 +157,7 @@ class InitAdminController extends Controller
             return;
         }
 
-        if ($this->confirm("Create root user '{$this->username}' with password '{$this->password}' ?")) {
+        if ( ($this->interactive==false) or ($this->confirm("Create root user '{$this->username}' with password '{$this->password}' ?")) ) {
 
             if (!$this->createUser($this->username, $this->password, $this->email)) {
                 echo "\nCreation failed.\n";
