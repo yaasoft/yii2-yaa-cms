@@ -38,7 +38,7 @@ class CategoryController extends \yeesoft\controllers\BaseController
 
         $query = Post::find()->joinWith('category')->where([
             'status' => Post::STATUS_PUBLISHED,
-            'post_category.slug' => $slug,
+            Category::tableName() . '.slug' => $slug,
         ])->orderBy('published_at DESC');
         $countQuery = clone $query;
 

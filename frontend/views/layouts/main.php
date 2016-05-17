@@ -71,19 +71,21 @@ ThemeAsset::register($this);
             <div class="col-md-3">
                 <div class="hidden-xs">
                     <?php
-                    if ($this->beginCache('main-menu', ['duration' => 3600])) {
+                        $menuItemsKey = '__mainMenuItems' . Yii::$app->language;
+                        if(!$menuItems = Yii::$app->cache->get($menuItemsKey)){
+                            $menuItems = Menu::getMenuItems('main-menu');
+                            Yii::$app->cache->set($menuItemsKey, $menuItems, 3600);
+                        }
+                    
                         echo Navigation::widget([
                             'encodeLabels' => false,
-                            'items' => Menu::getMenuItems('main-menu'),
+                            'items' => $menuItems,
                             'options' => [
                                 ['class' => 'nav nav-pills nav-stacked'],
                                 ['class' => 'nav nav-second-level'],
                                 ['class' => 'nav nav-third-level']
                             ],
                         ]);
-
-                        $this->endCache();
-                    }
                     ?>
                 </div>
             </div>
