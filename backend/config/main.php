@@ -50,6 +50,14 @@ return [
         'request' => [
             'baseUrl' => '/admin',
         ],
+        'assetManager' => [
+            'bundles' => [
+                'yii\bootstrap\BootstrapAsset' => [
+                    'sourcePath' => '@yeesoft/yii2-yee-core/assets/theme/bootswatch/custom',
+                    'css' => ['bootstrap.css']
+                ],
+            ],
+        ],
         'urlManager' => [
             'class' => 'yeesoft\web\MultilingualUrlManager',
             'showScriptName' => false,
