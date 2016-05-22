@@ -43,7 +43,7 @@ class SiteController extends \yeesoft\controllers\BaseController
         // display home page
         if (empty($slug) || $slug == 'index') {
 
-            $query = Post::find()->where(['status' => Post::STATUS_PUBLISHED])->orderBy('published_at DESC');
+            $query = Post::find()->where(['status' => Post::STATUS_PUBLISHED]);
             $countQuery = clone $query;
 
             $pagination = new Pagination([
@@ -51,7 +51,7 @@ class SiteController extends \yeesoft\controllers\BaseController
                 'defaultPageSize' => Yii::$app->settings->get('reading.page_size', 10),
             ]);
 
-            $posts = $query->offset($pagination->offset)
+            $posts = $query->orderBy('published_at DESC')->offset($pagination->offset)
                 ->limit($pagination->limit)
                 ->all();
 
