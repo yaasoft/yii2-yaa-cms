@@ -3,15 +3,15 @@
 namespace frontend\controllers;
 
 use yeesoft\post\models\Post;
+use yeesoft\post\models\Tag;
 use Yii;
-use yeesoft\post\models\Category;
 use yii\data\Pagination;
 use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
  */
-class CategoryController extends \yeesoft\controllers\BaseController
+class TagController extends \yeesoft\controllers\BaseController
 {
     public $freeAccess = true;
 
@@ -25,16 +25,16 @@ class CategoryController extends \yeesoft\controllers\BaseController
         if (empty($slug) || $slug == 'index') {
             throw new NotFoundHttpException('Page not found.');
         } else {
-            $category = Category::find()->where(['slug' => $slug]);
-            $categoryCount = clone $category;
-            if (!$categoryCount->count()) {
+            $tag = Tag::find()->where(['slug' => $slug]);
+            $tagCount = clone $tag;
+            if (!$tagCount->count()) {
                 throw new NotFoundHttpException('Page not found.');
             }
         }
 
-        $query = Post::find()->joinWith('category')->where([
+        $query = Post::find()->joinWith('tags')->where([
             'status' => Post::STATUS_PUBLISHED,
-            Category::tableName() . '.slug' => $slug,
+            Tag::tableName() . '.slug' => $slug,
         ])->orderBy('published_at DESC');
         $countQuery = clone $query;
 
@@ -49,7 +49,7 @@ class CategoryController extends \yeesoft\controllers\BaseController
 
         return $this->render('index', [
                 'posts' => $posts,
-                'category' => $category->one(),
+                'tag' => $tag->one(),
                 'pagination' => $pagination,
         ]);
     }

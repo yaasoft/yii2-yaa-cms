@@ -2,6 +2,7 @@
 
 use yii\widgets\LinkPager;
 use yii\helpers\Url;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 
@@ -34,11 +35,26 @@ $this->title = 'Homepage';
                     <?= $post->getThumbnail(['class' => 'thumbnail pull-left', 'style' => 'width: 160px; margin: 0 7px 7px 0']) ?>
                     <?= $post->shortContent ?>
                 </p>
-                <div class="clearfix"></div>
-                <?php if($post->category): ?>
-                    <?= Yii::t('yee/post', 'Posted in')?> <a href="<?= Url::to(['/category/index', 'slug' => $post->category->slug]) ?>">"<?= $post->category->title ?>"</a>
-                <?php endif; ?>
-                <span class="pull-right"><?= Yii::t('yee', 'Published') ?> <b><?= $post->publishedDate ?></b></span>
+
+                <div class="clearfix" style="margin-bottom: 10px;">
+                    <div class="pull-left">
+                        <?php if ($post->category): ?>
+                            <b><?= Yii::t('yee/post', 'Posted in') ?></b>
+                            <a href="<?= Url::to(['/category/index', 'slug' => $post->category->slug]) ?>">"<?= $post->category->title ?>"</a>
+                        <?php endif; ?>
+                    </div>
+                    <div class="pull-right">
+                        <?php $tags = $post->tags; ?>
+                        <?php if (!empty($tags)): ?>
+                            <b><?= Yii::t('yee/post', 'Tags') ?>:</b>
+                            <?php foreach ($tags as $tag): ?>
+                                <?= Html::a($tag->title, ['/tag/index', 'slug' => $tag->slug], ['class' => 'label label-primary']) ?>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+
+                <span class="pull-right"><?= Yii::t('yee', 'Published') ?> by <b><?= $post->author->username ?></b> on <b><?= $post->publishedDate ?></b></span>
 
             </div>
         <?php endforeach; ?>
