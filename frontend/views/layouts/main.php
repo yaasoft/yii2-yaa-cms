@@ -12,6 +12,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
+use yeesoft\comment\widgets\RecentComments;
 
 Yii::$app->assetManager->forceCopy = true;
 AppAsset::register($this);
@@ -87,6 +88,10 @@ ThemeAsset::register($this);
                             ],
                         ]);
                     ?>
+                </div>
+                
+                <div>
+                    <?= RecentComments::widget() ?>
                 </div>
             </div>
             <div class="col-md-9">
