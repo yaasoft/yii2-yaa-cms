@@ -22,7 +22,7 @@ $this->title = 'Homepage';
 
         <?php /* @var $post yeesoft\post\models\Post */ ?>
         <?php foreach ($posts as $post) : ?>
-            <?= $this->render('/items/post.php', ['post' => $post, 'page' => 'category']) ?>
+            <?= $this->render('/items/post.php', ['post' => $post, 'page' => 'index']) ?>
         <?php endforeach; ?>
 
         <div class="text-center">
