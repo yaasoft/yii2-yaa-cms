@@ -10,7 +10,7 @@ $config = [
             // !!! update this fileds in the following (if it is empty) - this is required for correct oauth work
             'clients' => [
                 'google' => [
-                    'class' => 'yii\authclient\clients\GoogleOAuth',
+                    'class' => 'yii\authclient\clients\Google',
                     'clientId' => '',
                     'clientSecret' => '',
                 ],
