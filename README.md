@@ -15,7 +15,7 @@ Installation
 
     ```bash
     cd /var/www/
-    composer global require "fxp/composer-asset-plugin:~1.1.0"
+    composer global require "fxp/composer-asset-plugin:^1.2.0"
     composer create-project --prefer-dist --stability=dev yeesoft/yii2-yee-cms mysite.com 
     ```
 
@@ -110,4 +110,4 @@ Installation
 
   7. Configurate your mailer `['components']['mailer']` in `common/config/main-local.php`.
 
-#####Your `Yee CMS` application is installed. Visit your site, the site should work and message _Congratulations! You have successfully created your Yii-powered application_ should be displayed.
+#####Your `Yee CMS` application is installed. Visit your site `mysite.com` or admin panel `mysite.com/admin`, the site should work and message _Congratulations! You have successfully created your Yii-powered application_ should be displayed.

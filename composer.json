@@ -23,27 +23,27 @@
   "prefer-stable": true,
   "require": {
     "php": ">=5.4.0",
-    "yiisoft/yii2": ">=2.0.6",
-    "yiisoft/yii2-bootstrap": "*",
-    "yiisoft/yii2-swiftmailer": "*",
-    "yeesoft/yii2-yee-core": "*",
-    "yeesoft/yii2-yee-auth": "*",
-    "yeesoft/yii2-yee-user": "*",
-    "yeesoft/yii2-yee-settings": "*",
-    "yeesoft/yii2-yee-menu": "*",
-    "yeesoft/yii2-yee-translation": "*",
-    "yeesoft/yii2-yee-post": "*",
-    "yeesoft/yii2-yee-media": "*",
-    "yeesoft/yii2-yee-page": "*",
-    "yeesoft/yii2-yee-seo": "*",
-    "yeesoft/yii2-comments": "*",
-    "yeesoft/yii2-yee-comment": "*"
+    "yiisoft/yii2": "~2.0.6",
+    "yiisoft/yii2-bootstrap": "~2.0.6",
+    "yiisoft/yii2-swiftmailer": "~2.0.6",
+    "yeesoft/yii2-yee-core": "~0.1.0",
+    "yeesoft/yii2-yee-auth": "~0.1.0",
+    "yeesoft/yii2-yee-user": "~0.1.0",
+    "yeesoft/yii2-yee-settings": "~0.1.0",
+    "yeesoft/yii2-yee-menu": "~0.1.0",
+    "yeesoft/yii2-yee-translation": "~0.1.0",
+    "yeesoft/yii2-yee-post": "~0.1.0",
+    "yeesoft/yii2-yee-media": "~0.1.0",
+    "yeesoft/yii2-yee-page": "~0.1.0",
+    "yeesoft/yii2-yee-seo": "~0.1.0",
+    "yeesoft/yii2-comments": "~0.1.0",
+    "yeesoft/yii2-yee-comment": "~0.1.0"
   },
   "require-dev": {
-    "yiisoft/yii2-codeception": "*",
-    "yiisoft/yii2-debug": "*",
-    "yiisoft/yii2-gii": "*",
-    "yiisoft/yii2-faker": "*"
+    "yiisoft/yii2-codeception": "~2.0.5",
+    "yiisoft/yii2-debug": "~2.0.9",
+    "yiisoft/yii2-gii": "~2.0.5",
+    "yiisoft/yii2-faker": "~2.0.3"
   },
   "config": {
     "process-timeout": 1800
