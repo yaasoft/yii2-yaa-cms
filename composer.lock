@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d4c5a3a2a9a76479b5d53e576db15d6",
+    "content-hash": "97497f78ee2e348324c656b45d2e97e0",
     "packages": [
         {
             "name": "2amigos/yii2-file-upload-widget",
@@ -1419,21 +1419,21 @@
         },
         {
             "name": "yeesoft/yii2-yee-auth",
-            "version": "0.1.0",
+            "version": "0.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yeesoft/yii2-yee-auth.git",
-                "reference": "4a97ddbc8ecaa1b26058eca40d4a8111f673983f"
+                "reference": "335e5c155a1fdb16bc8d47f2abc24bf84bc4ebe1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yeesoft/yii2-yee-auth/zipball/4a97ddbc8ecaa1b26058eca40d4a8111f673983f",
-                "reference": "4a97ddbc8ecaa1b26058eca40d4a8111f673983f",
+                "url": "https://api.github.com/repos/yeesoft/yii2-yee-auth/zipball/335e5c155a1fdb16bc8d47f2abc24bf84bc4ebe1",
+                "reference": "335e5c155a1fdb16bc8d47f2abc24bf84bc4ebe1",
                 "shasum": ""
             },
             "require": {
-                "yeesoft/yii2-yee-core": "~0.1.0",
-                "yeesoft/yii2-yee-user": "~0.1.0",
+                "yeesoft/yii2-yee-core": "~0.2.0",
+                "yeesoft/yii2-yee-user": "~0.2.0",
                 "yiisoft/yii2-authclient": "~2.1.0"
             },
             "type": "library",
@@ -1453,25 +1453,25 @@
                 }
             ],
             "description": "Authorization Module For Yee CMS",
-            "time": "2017-03-01T10:53:02+00:00"
+            "time": "2017-04-12 20:18:17"
         },
         {
             "name": "yeesoft/yii2-yee-comment",
-            "version": "0.1.0",
+            "version": "0.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yeesoft/yii2-yee-comment.git",
-                "reference": "96dacdee3d6795cc9fda44104f709dc374c0c12a"
+                "reference": "5bf6ad1ef15e3584a8586771b3cf15e138999e65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yeesoft/yii2-yee-comment/zipball/96dacdee3d6795cc9fda44104f709dc374c0c12a",
-                "reference": "96dacdee3d6795cc9fda44104f709dc374c0c12a",
+                "url": "https://api.github.com/repos/yeesoft/yii2-yee-comment/zipball/5bf6ad1ef15e3584a8586771b3cf15e138999e65",
+                "reference": "5bf6ad1ef15e3584a8586771b3cf15e138999e65",
                 "shasum": ""
             },
             "require": {
                 "yeesoft/yii2-comments": "~0.1.0",
-                "yeesoft/yii2-yee-core": "~0.1.0"
+                "yeesoft/yii2-yee-core": "~0.2.0"
             },
             "type": "library",
             "autoload": {
@@ -1490,11 +1490,11 @@
                 }
             ],
             "description": "Comments Module For Yee CMS",
-            "time": "2017-03-01T10:56:12+00:00"
+            "time": "2017-04-12 20:22:42"
         },
         {
             "name": "yeesoft/yii2-yee-core",
-            "version": "0.1.1",
+            "version": "0.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yeesoft/yii2-yee-core.git",
@@ -1531,26 +1531,26 @@
                 }
             ],
             "description": "Core Module For Yee CMS",
-            "time": "2017-03-04T21:03:45+00:00"
+            "time": "2017-03-04 21:03:45"
         },
         {
             "name": "yeesoft/yii2-yee-media",
-            "version": "0.1.0",
+            "version": "0.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yeesoft/yii2-yee-media.git",
-                "reference": "5218c751c123e7c5fe399f19f91cee24c2cea53a"
+                "reference": "3c5a50d1fd391335bf680a8760577de961768b05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yeesoft/yii2-yee-media/zipball/5218c751c123e7c5fe399f19f91cee24c2cea53a",
-                "reference": "5218c751c123e7c5fe399f19f91cee24c2cea53a",
+                "url": "https://api.github.com/repos/yeesoft/yii2-yee-media/zipball/3c5a50d1fd391335bf680a8760577de961768b05",
+                "reference": "3c5a50d1fd391335bf680a8760577de961768b05",
                 "shasum": ""
             },
             "require": {
                 "2amigos/yii2-file-upload-widget": "~1.0.6",
                 "tinymce/tinymce": "~4.5.0",
-                "yeesoft/yii2-yee-core": "~0.1.0",
+                "yeesoft/yii2-yee-core": "~0.2.0",
                 "yiisoft/yii2-imagine": "~2.1"
             },
             "type": "library",
@@ -1570,24 +1570,24 @@
                 }
             ],
             "description": "Media Module For Yee CMS",
-            "time": "2017-03-01T12:07:50+00:00"
+            "time": "2017-04-12 20:20:31"
         },
         {
             "name": "yeesoft/yii2-yee-menu",
-            "version": "0.1.0",
+            "version": "0.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yeesoft/yii2-yee-menu.git",
-                "reference": "75f98d8445ca89463f9d6222744a7e315867ef49"
+                "reference": "166d36d5d9a6193c81a72d05e02e941d5dacceca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yeesoft/yii2-yee-menu/zipball/75f98d8445ca89463f9d6222744a7e315867ef49",
-                "reference": "75f98d8445ca89463f9d6222744a7e315867ef49",
+                "url": "https://api.github.com/repos/yeesoft/yii2-yee-menu/zipball/166d36d5d9a6193c81a72d05e02e941d5dacceca",
+                "reference": "166d36d5d9a6193c81a72d05e02e941d5dacceca",
                 "shasum": ""
             },
             "require": {
-                "yeesoft/yii2-yee-core": "~0.1.0"
+                "yeesoft/yii2-yee-core": "~0.2.0"
             },
             "type": "library",
             "autoload": {
@@ -1606,25 +1606,25 @@
                 }
             ],
             "description": "Menu Module For Yee CMS",
-            "time": "2017-03-01T11:33:34+00:00"
+            "time": "2017-04-12 20:21:08"
         },
         {
             "name": "yeesoft/yii2-yee-page",
-            "version": "0.1.0",
+            "version": "0.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yeesoft/yii2-yee-page.git",
-                "reference": "0663b8f5b1f0ff73698d5ac5e2412496fb75fc84"
+                "reference": "b0aeb9d327a8c84c787bb91c9e3455e16f9504d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yeesoft/yii2-yee-page/zipball/0663b8f5b1f0ff73698d5ac5e2412496fb75fc84",
-                "reference": "0663b8f5b1f0ff73698d5ac5e2412496fb75fc84",
+                "url": "https://api.github.com/repos/yeesoft/yii2-yee-page/zipball/b0aeb9d327a8c84c787bb91c9e3455e16f9504d8",
+                "reference": "b0aeb9d327a8c84c787bb91c9e3455e16f9504d8",
                 "shasum": ""
             },
             "require": {
-                "yeesoft/yii2-yee-core": "~0.1.0",
-                "yeesoft/yii2-yee-media": "~0.1.0"
+                "yeesoft/yii2-yee-core": "~0.2.0",
+                "yeesoft/yii2-yee-media": "~0.2.0"
             },
             "type": "library",
             "autoload": {
@@ -1643,27 +1643,27 @@
                 }
             ],
             "description": "Page Module For Yee CMS",
-            "time": "2017-03-01T11:38:39+00:00"
+            "time": "2017-04-12 20:20:44"
         },
         {
             "name": "yeesoft/yii2-yee-post",
-            "version": "0.1.1",
+            "version": "0.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yeesoft/yii2-yee-post.git",
-                "reference": "15b6472c9e3a56273dfd5f2a4360c72affe76555"
+                "reference": "269a756c9dce5774ff8a0fbbe4348d0b00b5d60c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yeesoft/yii2-yee-post/zipball/15b6472c9e3a56273dfd5f2a4360c72affe76555",
-                "reference": "15b6472c9e3a56273dfd5f2a4360c72affe76555",
+                "url": "https://api.github.com/repos/yeesoft/yii2-yee-post/zipball/269a756c9dce5774ff8a0fbbe4348d0b00b5d60c",
+                "reference": "269a756c9dce5774ff8a0fbbe4348d0b00b5d60c",
                 "shasum": ""
             },
             "require": {
                 "nicolasbize/magicsuggest": "~2.0",
                 "paulzi/yii2-nested-intervals": "^1.0",
-                "yeesoft/yii2-yee-core": "~0.1.0",
-                "yeesoft/yii2-yee-media": "~0.1.0"
+                "yeesoft/yii2-yee-core": "~0.2.0",
+                "yeesoft/yii2-yee-media": "~0.2.0"
             },
             "type": "library",
             "autoload": {
@@ -1682,24 +1682,24 @@
                 }
             ],
             "description": "Post Module For Yee CMS",
-            "time": "2017-04-05T14:36:58+00:00"
+            "time": "2017-04-12 20:20:20"
         },
         {
             "name": "yeesoft/yii2-yee-seo",
-            "version": "0.1.0",
+            "version": "0.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yeesoft/yii2-yee-seo.git",
-                "reference": "836c90460e4cce1e315c61eb0dff379f7c5f6a3b"
+                "reference": "c66601eabd82a5a1c01a0163befc849f4e063607"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yeesoft/yii2-yee-seo/zipball/836c90460e4cce1e315c61eb0dff379f7c5f6a3b",
-                "reference": "836c90460e4cce1e315c61eb0dff379f7c5f6a3b",
+                "url": "https://api.github.com/repos/yeesoft/yii2-yee-seo/zipball/c66601eabd82a5a1c01a0163befc849f4e063607",
+                "reference": "c66601eabd82a5a1c01a0163befc849f4e063607",
                 "shasum": ""
             },
             "require": {
-                "yeesoft/yii2-yee-core": "~0.1.0"
+                "yeesoft/yii2-yee-core": "~0.2.0"
             },
             "type": "library",
             "autoload": {
@@ -1718,24 +1718,24 @@
                 }
             ],
             "description": "SEO Module For Yee CMS",
-            "time": "2017-03-01T11:23:59+00:00"
+            "time": "2017-04-12 20:21:44"
         },
         {
             "name": "yeesoft/yii2-yee-settings",
-            "version": "0.1.0",
+            "version": "0.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yeesoft/yii2-yee-settings.git",
-                "reference": "b4a6a5f6e9bf791f675fc3e1ab1cdfbb225c3ea5"
+                "reference": "b78bfc1a912765c5aba245a14733788018cd2f8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yeesoft/yii2-yee-settings/zipball/b4a6a5f6e9bf791f675fc3e1ab1cdfbb225c3ea5",
-                "reference": "b4a6a5f6e9bf791f675fc3e1ab1cdfbb225c3ea5",
+                "url": "https://api.github.com/repos/yeesoft/yii2-yee-settings/zipball/b78bfc1a912765c5aba245a14733788018cd2f8a",
+                "reference": "b78bfc1a912765c5aba245a14733788018cd2f8a",
                 "shasum": ""
             },
             "require": {
-                "yeesoft/yii2-yee-core": "~0.1.0"
+                "yeesoft/yii2-yee-core": "~0.2.0"
             },
             "type": "library",
             "autoload": {
@@ -1754,24 +1754,24 @@
                 }
             ],
             "description": "Settings Module For Yee CMS",
-            "time": "2017-03-01T11:20:48+00:00"
+            "time": "2017-04-12 20:22:14"
         },
         {
             "name": "yeesoft/yii2-yee-translation",
-            "version": "0.1.0",
+            "version": "0.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yeesoft/yii2-yee-translation.git",
-                "reference": "b7dc1cf478758e148ba6a1f422ca1a3c464f54b0"
+                "reference": "5124839518bd177aa3793d6ea3b05fa2fd817a4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yeesoft/yii2-yee-translation/zipball/b7dc1cf478758e148ba6a1f422ca1a3c464f54b0",
-                "reference": "b7dc1cf478758e148ba6a1f422ca1a3c464f54b0",
+                "url": "https://api.github.com/repos/yeesoft/yii2-yee-translation/zipball/5124839518bd177aa3793d6ea3b05fa2fd817a4f",
+                "reference": "5124839518bd177aa3793d6ea3b05fa2fd817a4f",
                 "shasum": ""
             },
             "require": {
-                "yeesoft/yii2-yee-core": "~0.1.0"
+                "yeesoft/yii2-yee-core": "~0.2.0"
             },
             "type": "library",
             "autoload": {
@@ -1790,27 +1790,27 @@
                 }
             ],
             "description": "Translation Module For Yee CMS",
-            "time": "2017-03-01T10:59:24+00:00"
+            "time": "2017-04-12 20:22:28"
         },
         {
             "name": "yeesoft/yii2-yee-user",
-            "version": "0.1.0",
+            "version": "0.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yeesoft/yii2-yee-user.git",
-                "reference": "ef8679faf6247be0129e94a81582fe4ea3a5c83a"
+                "reference": "e2a5af4da677da201dbd06ea89f39f55af8a57de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yeesoft/yii2-yee-user/zipball/ef8679faf6247be0129e94a81582fe4ea3a5c83a",
-                "reference": "ef8679faf6247be0129e94a81582fe4ea3a5c83a",
+                "url": "https://api.github.com/repos/yeesoft/yii2-yee-user/zipball/e2a5af4da677da201dbd06ea89f39f55af8a57de",
+                "reference": "e2a5af4da677da201dbd06ea89f39f55af8a57de",
                 "shasum": ""
             },
             "require": {
                 "ikimea/browser": "~1.14",
                 "webvimark/date-range-picker": "~1.0.2",
-                "yeesoft/yii2-yee-auth": "~0.1.0",
-                "yeesoft/yii2-yee-core": "~0.1.0"
+                "yeesoft/yii2-yee-auth": "~0.2.0",
+                "yeesoft/yii2-yee-core": "~0.2.0"
             },
             "type": "library",
             "autoload": {
@@ -1829,7 +1829,7 @@
                 }
             ],
             "description": "User Module For Yee CMS",
-            "time": "2017-03-01T10:18:47+00:00"
+            "time": "2017-04-12 20:17:50"
         },
         {
             "name": "yiidoc/yii2-timeago",

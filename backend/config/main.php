@@ -1,14 +1,13 @@
 <?php
+
 $params = array_merge(
-    require(__DIR__ . '/../../common/config/params.php'),
-    require(__DIR__ . '/../../common/config/params-local.php'),
-    require(__DIR__ . '/params.php'),
-    require(__DIR__ . '/params-local.php')
+        require(__DIR__ . '/../../common/config/params.php'), require(__DIR__ . '/../../common/config/params-local.php'), require(__DIR__ . '/params.php'), require(__DIR__ . '/params-local.php')
 );
 
 return [
     'id' => 'backend',
     'homeUrl' => '/admin',
+    'defaultRoute' => 'dashboard',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
@@ -53,8 +52,12 @@ return [
         'assetManager' => [
             'bundles' => [
                 'yii\bootstrap\BootstrapAsset' => [
-                    'sourcePath' => '@yeesoft/yii2-yee-core/assets/theme/bootswatch/custom',
-                    'css' => ['bootstrap.css']
+                    'sourcePath' => '@yeesoft/yee-theme/dist',
+                    'css' => ['css/theme.min.css']
+                ],
+                'yii\bootstrap\BootstrapPluginAsset' => [
+                    'sourcePath' => '@yeesoft/yee-theme/dist',
+                    'js' => ['js/bootstrap.min.js']
                 ],
             ],
         ],
@@ -68,7 +71,7 @@ return [
                 //'<controller:(test)>' => '<controller>/index',
                 //'<controller:(test)>/<id:\d+>' => '<controller>/view',
                 //'<controller:(test)>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                //'<controller:(test)>/<action:\w+>' => '<controller>/<action>',
+                '<controller:(site)>/<action:\w+>' => '<controller>/<action>',
                 //yee cms and other modules routes
                 '<module:\w+>/' => '<module>/default/index',
                 '<module:\w+>/<action:\w+>/<id:\d+>' => '<module>/default/<action>',
@@ -81,7 +84,7 @@ return [
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
-                [
+                    [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
