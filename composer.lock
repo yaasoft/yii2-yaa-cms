@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "97497f78ee2e348324c656b45d2e97e0",
+    "content-hash": "f7340c205ca178607bbaef6a49a4c9d6",
     "packages": [
         {
             "name": "2amigos/yii2-file-upload-widget",
@@ -1340,16 +1340,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yeesoft/yee-theme.git",
-                "reference": "6babc7f022e888c20f8845a6254662ac3681cf7e"
+                "reference": "a317f3ca9b38dbbf0c13be9a6b59116d988e4cc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yeesoft/yee-theme/zipball/6babc7f022e888c20f8845a6254662ac3681cf7e",
-                "reference": "6babc7f022e888c20f8845a6254662ac3681cf7e",
+                "url": "https://api.github.com/repos/yeesoft/yee-theme/zipball/a317f3ca9b38dbbf0c13be9a6b59116d988e4cc0",
+                "reference": "a317f3ca9b38dbbf0c13be9a6b59116d988e4cc0",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/icheck": "~1.0.2"
+                "bower-asset/icheck": "~1.0.2",
+                "yiisoft/yii2-jui": "~2.0.0"
             },
             "require-dev": {
                 "almasaeed2010/adminlte": "~2.3.0",
@@ -1367,30 +1368,29 @@
             ],
             "authors": [
                 {
-                    "name": "Taras Makitra",
-                    "email": "makitrataras@gmail.com"
+                    "name": "Taras Makitra"
                 }
             ],
-            "description": "Yee CMS control panel theme based on AdminLTE 2 theme",
+            "description": "YeeCMS control panel theme based on AdminLTE 2 theme",
             "homepage": "https://www.yee-soft.com/",
             "keywords": [
                 "cms",
                 "yee"
             ],
-            "time": "2017-03-30 11:32:10"
+            "time": "2017-04-17 12:28:41"
         },
         {
             "name": "yeesoft/yii2-comments",
-            "version": "0.1.0",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yeesoft/yii2-comments.git",
-                "reference": "c36cabca19ff47c27833d799421a19bd40adc86c"
+                "reference": "306a4b3ee96d8bb18b747e6d0d163b114ceb954e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yeesoft/yii2-comments/zipball/c36cabca19ff47c27833d799421a19bd40adc86c",
-                "reference": "c36cabca19ff47c27833d799421a19bd40adc86c",
+                "url": "https://api.github.com/repos/yeesoft/yii2-comments/zipball/306a4b3ee96d8bb18b747e6d0d163b114ceb954e",
+                "reference": "306a4b3ee96d8bb18b747e6d0d163b114ceb954e",
                 "shasum": ""
             },
             "require": {
@@ -1415,7 +1415,55 @@
                 }
             ],
             "description": "Comments Module For Yii2 Framework",
-            "time": "2017-03-01T10:31:23+00:00"
+            "time": "2017-04-16T16:27:45+00:00"
+        },
+        {
+            "name": "yeesoft/yii2-multilingual",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yeesoft/yii2-multilingual.git",
+                "reference": "2d7e8e6edca2a40169ed140fc9fb745af9c9a878"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yeesoft/yii2-multilingual/zipball/2d7e8e6edca2a40169ed140fc9fb745af9c9a878",
+                "reference": "2d7e8e6edca2a40169ed140fc9fb745af9c9a878",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.6",
+                "yiisoft/yii2-bootstrap": "~2.0.0"
+            },
+            "require-dev": {
+                "codeception/base": "^2.2.3",
+                "codeception/specify": "~0.4.3",
+                "codeception/verify": "~0.3.1"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yeesoft\\multilingual\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Taras Makitra"
+                }
+            ],
+            "description": "Yii2 Multilingual Module",
+            "keywords": [
+                "extension",
+                "i18n",
+                "multilingual",
+                "yii2",
+                "yii2-multilingual"
+            ],
+            "time": "2017-04-16T16:40:40+00:00"
         },
         {
             "name": "yeesoft/yii2-yee-auth",
@@ -1498,12 +1546,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yeesoft/yii2-yee-core.git",
-                "reference": "2264664c96834afd8ede4b2d6c7436f3c63a9b73"
+                "reference": "08276221abfcfad863d60b00ba082d23d583fa1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yeesoft/yii2-yee-core/zipball/2264664c96834afd8ede4b2d6c7436f3c63a9b73",
-                "reference": "2264664c96834afd8ede4b2d6c7436f3c63a9b73",
+                "url": "https://api.github.com/repos/yeesoft/yii2-yee-core/zipball/08276221abfcfad863d60b00ba082d23d583fa1c",
+                "reference": "08276221abfcfad863d60b00ba082d23d583fa1c",
                 "shasum": ""
             },
             "require": {
@@ -1531,7 +1579,42 @@
                 }
             ],
             "description": "Core Module For Yee CMS",
-            "time": "2017-03-04 21:03:45"
+            "time": "2017-04-17 12:31:06"
+        },
+        {
+            "name": "yeesoft/yii2-yee-dashboard",
+            "version": "0.2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yeesoft/yii2-yee-dashboard.git",
+                "reference": "7bcbb42c3b56e834362f3f0d87940dae7f48d82b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yeesoft/yii2-yee-dashboard/zipball/7bcbb42c3b56e834362f3f0d87940dae7f48d82b",
+                "reference": "7bcbb42c3b56e834362f3f0d87940dae7f48d82b",
+                "shasum": ""
+            },
+            "require": {
+                "yeesoft/yii2-yee-core": "~0.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "yeesoft\\dashboard\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Taras Makitra"
+                }
+            ],
+            "description": "Dashboard Module For YeeCMS",
+            "time": "2017-04-17 12:23:18"
         },
         {
             "name": "yeesoft/yii2-yee-media",

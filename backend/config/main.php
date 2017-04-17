@@ -12,6 +12,9 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
+        'dashboard' => [
+            'class' => 'yeesoft\dashboard\DashboardModule',
+        ],
         'settings' => [
             'class' => 'yeesoft\settings\SettingsModule',
         ],
@@ -71,8 +74,8 @@ return [
                 //'<controller:(test)>' => '<controller>/index',
                 //'<controller:(test)>/<id:\d+>' => '<controller>/view',
                 //'<controller:(test)>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                '<controller:(site)>/<action:\w+>' => '<controller>/<action>',
-                //yee cms and other modules routes
+                //'<controller:(test)>/<action:\w+>' => '<controller>/<action>',
+                //YeeCMS and other modules routes:
                 '<module:\w+>/' => '<module>/default/index',
                 '<module:\w+>/<action:\w+>/<id:\d+>' => '<module>/default/<action>',
                 '<module:\w+>/<action:(create)>' => '<module>/default/<action>',
@@ -91,7 +94,7 @@ return [
             ],
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => '/dashboard/default/error',
         ],
     ],
     'params' => $params,
