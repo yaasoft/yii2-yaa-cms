@@ -14,6 +14,17 @@ return [
     'modules' => [
         'dashboard' => [
             'class' => 'yeesoft\dashboard\DashboardModule',
+            'widgets' => [
+                'yeesoft\post\widgets\dashboard\PostWidget',
+                'yeesoft\comment\widgets\dashboard\CommentWidget',
+            ],
+            'infoBoxes' => [
+                'yeesoft\post\widgets\dashboard\PostInfoBox',
+                'yeesoft\post\widgets\dashboard\PostInfoBox2',
+                'yeesoft\post\widgets\dashboard\PostInfoBox3',
+                'yeesoft\post\widgets\dashboard\PostInfoBox4',
+                'yeesoft\comment\widgets\dashboard\CommentInfoBox',
+            ],
         ],
         'settings' => [
             'class' => 'yeesoft\settings\SettingsModule',
@@ -56,7 +67,7 @@ return [
             'bundles' => [
                 'yii\bootstrap\BootstrapAsset' => [
                     'sourcePath' => '@yeesoft/yee-theme/dist',
-                    'css' => ['css/theme.min.css']
+                    'css' => ['css/theme.css']
                 ],
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'sourcePath' => '@yeesoft/yee-theme/dist',
@@ -87,7 +98,7 @@ return [
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
-                    [
+                [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
