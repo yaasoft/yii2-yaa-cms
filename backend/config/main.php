@@ -20,9 +20,6 @@ return [
             ],
             'infoBoxes' => [
                 'yeesoft\post\widgets\dashboard\PostInfoBox',
-                'yeesoft\post\widgets\dashboard\PostInfoBox2',
-                'yeesoft\post\widgets\dashboard\PostInfoBox3',
-                'yeesoft\post\widgets\dashboard\PostInfoBox4',
                 'yeesoft\comment\widgets\dashboard\CommentInfoBox',
             ],
         ],
@@ -77,23 +74,21 @@ return [
         ],
         'urlManager' => [
             'class' => 'yeesoft\web\MultilingualUrlManager',
-            'showScriptName' => false,
-            'enablePrettyUrl' => true,
-            'multilingualRules' => false,
-            'rules' => array(
+            'rules' => [
                 //add here local frontend controllers
                 //'<controller:(test)>' => '<controller>/index',
                 //'<controller:(test)>/<id:\d+>' => '<controller>/view',
                 //'<controller:(test)>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 //'<controller:(test)>/<action:\w+>' => '<controller>/<action>',
                 //YeeCMS and other modules routes:
-                '<module:\w+>/' => '<module>/default/index',
-                '<module:\w+>/<action:\w+>/<id:\d+>' => '<module>/default/<action>',
-                '<module:\w+>/<action:(create)>' => '<module>/default/<action>',
-                '<module:\w+>/<controller:\w+>' => '<module>/<controller>/index',
-                '<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
-                '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
-            )
+                '<language:([a-zA-Z-]{2,5})?>/' => 'dashboard/default/index',
+                '<language:([a-zA-Z-]{2,5})?>/<module:\w+>/' => '<module>/default/index',
+                '<language:([a-zA-Z-]{2,5})?>/<module:\w+>/<action:\w+>/<id:\d+>' => '<module>/default/<action>',
+                '<language:([a-zA-Z-]{2,5})?>/<module:\w+>/<action:(create)>' => '<module>/default/<action>',
+                '<language:([a-zA-Z-]{2,5})?>/<module:\w+>/<controller:\w+>' => '<module>/<controller>/index',
+                '<language:([a-zA-Z-]{2,5})?>/<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
+                '<language:([a-zA-Z-]{2,5})?>/<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

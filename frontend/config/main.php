@@ -1,6 +1,7 @@
 <?php
+
 $params = array_merge(
-    require(__DIR__ . '/../../common/config/params.php'), require(__DIR__ . '/../../common/config/params-local.php'), require(__DIR__ . '/params.php'), require(__DIR__ . '/params-local.php')
+        require(__DIR__ . '/../../common/config/params.php'), require(__DIR__ . '/../../common/config/params-local.php'), require(__DIR__ . '/params.php'), require(__DIR__ . '/params-local.php')
 );
 
 return [
@@ -32,22 +33,20 @@ return [
         ],
         'urlManager' => [
             'class' => 'yeesoft\web\MultilingualUrlManager',
-            'showScriptName' => false,
-            'enablePrettyUrl' => true,
-            'rules' => array(
+            'rules' => [
                 '<module:auth>/<action:(logout|captcha)>' => '<module>/default/<action>',
                 '<module:auth>/<action:(oauth)>/<authclient:\w+>' => '<module>/default/<action>',
-            ),
-            'multilingualRules' => [
-                '<module:auth>/<action:\w+>' => '<module>/default/<action>',
-                '<controller:(category|tag)>/<slug:[\w \-]+>' => '<controller>/index',
-                '<controller:(category|tag)>' => '<controller>/index',
-                '<slug:[\w \-]+>' => 'site/index/',
-                '/' => 'site/index',
-                '<action:[\w \-]+>' => 'site/<action>',
-                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                '<language:([a-zA-Z-]{2,5})?>/<module:auth>/<action:\w+>' => '<module>/default/<action>',
+                '<language:([a-zA-Z-]{2,5})?>/<controller:(category|tag)>/<slug:[\w \-]+>' => '<controller>/index',
+                '<language:([a-zA-Z-]{2,5})?>/<controller:(category|tag)>' => '<controller>/index',
+                '<language:([a-zA-Z-]{2,5})?>/<slug:[\w \-]+>' => 'site/index/',
+                '<language:([a-zA-Z-]{2,5})?>' => 'site/index',
+                '<language:([a-zA-Z-]{2,5})?>/<action:[\w \-]+>' => 'site/<action>',
+                '<language:([a-zA-Z-]{2,5})?>/<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ],
-            'nonMultilingualUrls' => [
+            'excludedActions' => [
+                'auth/default/captcha',
+                'auth/default/logout',
                 'auth/default/oauth',
             ],
         ],

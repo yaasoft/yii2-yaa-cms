@@ -56,11 +56,11 @@ ThemeAsset::register($this);
             'linkOptions' => ['data-method' => 'post']
         ];
     }
-    echo Nav::widget([
-        'encodeLabels' => false,
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
+//    echo Nav::widget([
+//        'encodeLabels' => false,
+//        'options' => ['class' => 'navbar-nav navbar-right'],
+//        'items' => $menuItems,
+//    ]);
 
     echo LanguageSelector::widget(['display' => 'label', 'view' => 'pills']);
 
@@ -78,15 +78,15 @@ ThemeAsset::register($this);
                             Yii::$app->cache->set($menuItemsKey, $menuItems, 3600);
                         }
                     
-                        echo Navigation::widget([
-                            'encodeLabels' => false,
-                            'items' => $menuItems,
-                            'options' => [
-                                ['class' => 'nav nav-pills nav-stacked'],
-                                ['class' => 'nav nav-second-level'],
-                                ['class' => 'nav nav-third-level']
-                            ],
-                        ]);
+//                        echo Navigation::widget([
+//                            'encodeLabels' => false,
+//                            'items' => $menuItems,
+//                            'options' => [
+//                                ['class' => 'nav nav-pills nav-stacked'],
+//                                ['class' => 'nav nav-second-level'],
+//                                ['class' => 'nav nav-third-level']
+//                            ],
+//                        ]);
                     ?>
                 </div>
                 
