@@ -32,7 +32,7 @@ return [
             'baseUrl' => '',
         ],
         'urlManager' => [
-            'class' => 'yeesoft\web\MultilingualUrlManager',
+            'class' => 'yeesoft\web\UrlManager',
             'rules' => [
                 '<module:auth>/<action:(logout|captcha)>' => '<module>/default/<action>',
                 '<module:auth>/<action:(oauth)>/<authclient:\w+>' => '<module>/default/<action>',
@@ -49,9 +49,6 @@ return [
                 'auth/default/logout',
                 'auth/default/oauth',
             ],
-        ],
-        'authClientCollection' => [
-            'class' => 'yii\authclient\Collection',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

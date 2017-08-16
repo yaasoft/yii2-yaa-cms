@@ -6,12 +6,18 @@ return [
     'language' => 'en-US',
     'sourceLanguage' => 'en-US',
     'components' => [
+        'authManager' => [
+            'class' => 'yeesoft\rbac\DbManager',
+        ],
         'yee' => [
             'class' => 'yeesoft\Yee',
             'languages' => [
                 'en-US' => 'English',
                 'uk' => 'Ukrainian',
             ]
+        ],
+        'authClientCollection' => [
+            'class' => 'yii\authclient\Collection',
         ],
         'settings' => [
             'class' => 'yeesoft\components\Settings'
@@ -20,7 +26,7 @@ return [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'class' => 'yeesoft\components\User',
+            'class' => 'yeesoft\web\User',
             'on afterLogin' => function ($event) {
                 \yeesoft\models\UserVisitLog::newVisitor($event->identity->id);
             }

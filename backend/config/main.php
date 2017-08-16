@@ -12,14 +12,19 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
+        'auth' => [
+            'class' => 'yeesoft\auth\AuthModule',
+        ],
         'dashboard' => [
             'class' => 'yeesoft\dashboard\DashboardModule',
             'widgets' => [
                 'yeesoft\post\widgets\dashboard\PostWidget',
+                'yeesoft\page\widgets\dashboard\PageWidget',
                 'yeesoft\comment\widgets\dashboard\CommentWidget',
             ],
             'infoBoxes' => [
                 'yeesoft\post\widgets\dashboard\PostInfoBox',
+                'yeesoft\page\widgets\dashboard\PageInfoBox',
                 'yeesoft\comment\widgets\dashboard\CommentInfoBox',
             ],
         ],
@@ -73,7 +78,7 @@ return [
             ],
         ],
         'urlManager' => [
-            'class' => 'yeesoft\web\MultilingualUrlManager',
+            'class' => 'yeesoft\web\UrlManager',
             'rules' => [
                 //add here local frontend controllers
                 //'<controller:(test)>' => '<controller>/index',

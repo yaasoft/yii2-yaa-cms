@@ -40,7 +40,8 @@
         "yeesoft/yii2-comments": "~0.1.0",
         "yeesoft/yii2-multilingual": "~1.0.0",
         "yeesoft/yee-theme": "~0.2.0",
-        "yiisoft/yii2-jui": "^2.0"
+        "yiisoft/yii2-jui": "^2.0",
+        "bower-asset/transliteration": "1.6.2"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "~2.0.5",
