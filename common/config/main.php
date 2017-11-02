@@ -2,19 +2,16 @@
 
 return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
-    'bootstrap' => ['comments', 'yee'],
+    'bootstrap' => ['comments'],
     'language' => 'en-US',
+    'languages' => [
+        'en-US' => 'English',
+        'uk' => 'Ukrainian',
+    ],
     'sourceLanguage' => 'en-US',
     'components' => [
         'authManager' => [
             'class' => 'yeesoft\rbac\DbManager',
-        ],
-        'yee' => [
-            'class' => 'yeesoft\Yee',
-            'languages' => [
-                'en-US' => 'English',
-                'uk' => 'Ukrainian',
-            ]
         ],
         'authClientCollection' => [
             'class' => 'yii\authclient\Collection',

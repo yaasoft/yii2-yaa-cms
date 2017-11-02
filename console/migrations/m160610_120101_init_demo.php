@@ -9,10 +9,10 @@ class m160610_120101_init_demo extends Migration
         $this->insert('{{%menu}}', ['id' => 'main-menu', 'created_by' => 1]);
         $this->insert('{{%menu_lang}}', ['menu_id' => 'main-menu', 'language' => 'en-US', 'title' => 'Main Menu']);
 
-        $this->insert('{{%menu_link}}', ['id' => 'home', 'menu_id' => 'main-menu', 'link' => '/site/index', 'alwaysVisible' => 1, 'created_by' => 1, 'order' => 1]);
-        $this->insert('{{%menu_link}}', ['id' => 'about', 'menu_id' => 'main-menu', 'link' => '/site/about', 'alwaysVisible' => 1, 'created_by' => 1, 'order' => 9]);
-        $this->insert('{{%menu_link}}', ['id' => 'test-page', 'menu_id' => 'main-menu', 'link' => '/site/test', 'alwaysVisible' => 1, 'created_by' => 1, 'order' => 2]);
-        $this->insert('{{%menu_link}}', ['id' => 'contact', 'menu_id' => 'main-menu', 'link' => '/site/contact', 'alwaysVisible' => 1, 'created_by' => 1, 'order' => 10]);
+        $this->insert('{{%menu_link}}', ['id' => 'home', 'menu_id' => 'main-menu', 'link' => '/site/index', 'always_visible' => 1, 'created_by' => 1, 'order' => 1]);
+        $this->insert('{{%menu_link}}', ['id' => 'about', 'menu_id' => 'main-menu', 'link' => '/site/about', 'always_visible' => 1, 'created_by' => 1, 'order' => 9]);
+        $this->insert('{{%menu_link}}', ['id' => 'test-page', 'menu_id' => 'main-menu', 'link' => '/site/test', 'always_visible' => 1, 'created_by' => 1, 'order' => 2]);
+        $this->insert('{{%menu_link}}', ['id' => 'contact', 'menu_id' => 'main-menu', 'link' => '/site/contact', 'always_visible' => 1, 'created_by' => 1, 'order' => 10]);
 
         $this->insert('{{%menu_link_lang}}', ['link_id' => 'home', 'label' => 'Home', 'language' => 'en-US']);
         $this->insert('{{%menu_link_lang}}', ['link_id' => 'about', 'label' => 'About', 'language' => 'en-US']);

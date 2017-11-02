@@ -62,7 +62,7 @@ ThemeAsset::register($this);
 //        'items' => $menuItems,
 //    ]);
 
-    echo LanguageSelector::widget(['display' => 'label', 'view' => 'pills']);
+    //echo LanguageSelector::widget(['display' => 'label', 'view' => 'pills']);
 
     NavBar::end();
     ?>

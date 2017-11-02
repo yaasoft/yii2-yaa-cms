@@ -68,12 +68,15 @@ return [
         'assetManager' => [
             'bundles' => [
                 'yii\bootstrap\BootstrapAsset' => [
-                    'sourcePath' => '@yeesoft/yee-theme/dist',
-                    'css' => ['css/theme.css']
+                    'sourcePath' => '@yeesoft/yee-theme/dist/theme',
+                    'css' => ['css/theme.css']//.min
                 ],
                 'yii\bootstrap\BootstrapPluginAsset' => [
-                    'sourcePath' => '@yeesoft/yee-theme/dist',
+                    'sourcePath' => '@yeesoft/yee-theme/dist/theme',
                     'js' => ['js/bootstrap.min.js']
+                ],
+                'yii\web\JqueryAsset' => [
+                    'depends' => ['yeesoft\theme\assets\CheckboxAsset']
                 ],
             ],
         ],
