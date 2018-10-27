@@ -11,12 +11,11 @@
   "license": "Apache-2.0",
   "authors": [
     {
-      "name": "Taras Makitra",
-      "email": "makitrataras@gmail.com"
+      "name": "yaasoft",
+      "email": "yaasoft@gmail.com"
     }
   ],
   "support": {
-    "issues": "https://github.com/yeesoft/yii2-yee-cms/issues/new",
     "source": "https://github.com/yaasoft/yii2-yaa-cms"
   },
   "minimum-stability": "dev",
