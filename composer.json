@@ -1,12 +1,12 @@
 {
-  "name": "yeesoft/yii2-yee-cms",
-  "description": "Yee CMS Based on Yii 2 Advanced Project Template",
+  "name": "yaasoft/yii2-yaa-cms",
+  "description": "Yaa CMS Based on Yii 2 Advanced Project Template",
   "keywords": [
-    "yee",
+    "yaa",
     "cms",
     "yii2"
   ],
-  "homepage": "http://www.yee-soft.com/",
+  "homepage": "",
   "type": "project",
   "license": "Apache-2.0",
   "authors": [
@@ -17,7 +17,7 @@
   ],
   "support": {
     "issues": "https://github.com/yeesoft/yii2-yee-cms/issues/new",
-    "source": "https://github.com/yeesoft/yii2-yee-cms"
+    "source": "https://github.com/yaasoft/yii2-yaa-cms"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
