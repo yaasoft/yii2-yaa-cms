@@ -16,7 +16,7 @@ Installation
     ```bash
     cd /var/www/
     composer global require "fxp/composer-asset-plugin:^1.2.0"
-    composer create-project --prefer-dist --stability=dev yeesoft/yii2-yee-cms mysite.com 
+    composer create-project --prefer-dist --stability=dev yaasoft/yii2-yaa-cms mysite.com 
     ```
 
   2. Initialize the installed application
