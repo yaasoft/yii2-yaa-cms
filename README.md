@@ -24,7 +24,7 @@ YaaCMS - панель управления на Yii2 PHP Framework
    composer create-project --prefer-dist --stability=dev yaasoft/yii2-yaa-cms mysite.com 
    ```
 
-  2. Инициализируем установленное приложение
+ ### 2. Инициализируем установленное приложение
 
      Выполните команду `init` и выберите `dev` или `prod` в качестве среды.
 
@@ -33,9 +33,9 @@ YaaCMS - панель управления на Yii2 PHP Framework
       php init
       ```
   
-  3. Настройка веб сервера:
+ ### 3. Настройка веб сервера:
 
-     Для Apache:
+   Для Apache:
      
      ```apacheconf
       <VirtualHost *:80>
@@ -90,7 +90,7 @@ YaaCMS - панель управления на Yii2 PHP Framework
              </Directory>
          </VirtualHost>
      ```
-     Для Nginx:
+   Для Nginx:
      
      ```nginx
      server {
@@ -181,15 +181,21 @@ YaaCMS - панель управления на Yii2 PHP Framework
      ```
      
        
-  4. Создайте новую базу данных и внесите соответствующие изменения в секцию `components.db` файла `common/config/main-local.php`
+ ### 4. Настраиваем приложение
+ Создайте новую базу данных и внесите соответствующие изменения в секцию `components.db` файла `common/config/main-local.php`
 
-  5. Примените миграции при помощи консольной команды 
-  ```migrate
+  Примените миграции при помощи консольной команды:
+  
+  ```php
   php yii migrate --migrationLookup=@yeesoft/yii2-yee-core/migrations/,@yeesoft/yii2-yee-auth/migrations/,@yeesoft/yii2-yee-settings/migrations/,@yeesoft/yii2-yee-menu/migrations/,@yeesoft/yii2-yee-user/migrations/,@yeesoft/yii2-yee-translation/migrations/,@yeesoft/yii2-yee-media/migrations/,@yeesoft/yii2-yee-post/migrations/,@yeesoft/yii2-yee-page/migrations/,@yeesoft/yii2-comments/migrations/,@yeesoft/yii2-yee-comment/migrations/,@yeesoft/yii2-yee-seo/migrations/.
   ```
 
-  6. Создаем Администратора `php yii init-admin`.
+ ### 6. Создаем Администратора
+ 
+ Выполните в консоли: `php yii init-admin` и введите данные.
 
-  7. Настраиваем почту `['components']['mailer']` in `common/config/main-local.php`.
+ ###7. Настраиваем почту
+ Внесите изменения в секцию `['components']['mailer']` в файле `common/config/main-local.php`.
 
-#####Поздравляем! Вы успешно установили Yaa cms.
+
+ ### На этом установка Yaa Сms завершена.
