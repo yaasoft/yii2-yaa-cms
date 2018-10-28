@@ -8,7 +8,7 @@ $params = array_merge(
 
 return [
     'id' => 'backend',
-    'homeUrl' => '/admin',
+    'homeUrl' => '/',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
@@ -47,9 +47,6 @@ return [
         ],
     ],
     'components' => [
-        'request' => [
-            'baseUrl' => '/admin',
-        ],
         'assetManager' => [
             'bundles' => [
                 'yii\bootstrap\BootstrapAsset' => [
