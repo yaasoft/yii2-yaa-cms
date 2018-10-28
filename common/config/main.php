@@ -20,8 +20,14 @@ return [
                 \yeesoft\models\UserVisitLog::newVisitor($event->identity->id);
             }
         ],
+        'authClientCollection' => [
+            'class' => 'yii\authclient\Collection',
+        ],
     ],
     'modules' => [
+        'auth' => [
+            'class' => 'yeesoft\auth\AuthModule',
+        ],
         'comments' => [
             'class' => 'yeesoft\comments\Comments',
             'userModel' => 'yeesoft\models\User',
