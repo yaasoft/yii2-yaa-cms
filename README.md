@@ -1,113 +1,195 @@
-# YEE CMS
-YeeCMS - Control Panel Based On Yii2 PHP Framework
+<p align="center">
+    <a href="https://github.com/yaasoft/yii2-yaa-cms" target="_blank">
+        <img src="https://avatars1.githubusercontent.com/u/9977297?s=400&v=4" width="400" alt="Yee cms" />
+    </a>
+</p>
 
-Installation
+# YAA CMS
+YaaCMS - панель управления на Yii2 PHP Framework
+
+Установка
 ------------
+ 
+ ### 1. Установка Composer.
+    
+    
+   Если Composer еще не установлен это можно сделать по инструкции на
+   [getcomposer.org](https://getcomposer.org/download/).
+   
+   Если Composer установлен, вы можете установить приложение используя следующие команды:
+    
+   ```bash
+   cd /var/www/
+   composer global require "fxp/composer-asset-plugin:^1.2.0"
+   composer create-project --prefer-dist --stability=dev yaasoft/yii2-yaa-cms mysite.com 
+   ```
 
-### Installing Yee CMS application. 
+  2. Инициализируем установленное приложение
 
-  1. Installing (using Composer)
-
-    If you do not have [Composer](http://getcomposer.org/), follow the instructions in the
-    [Installing Yii](https://github.com/yiisoft/yii2/blob/master/docs/guide/start-installation.md#installing-via-composer) section of the definitive guide to install it.
-
-    With Composer installed, you can then install the application using the following commands:
-
-    ```bash
-    cd /var/www/
-    composer global require "fxp/composer-asset-plugin:^1.2.0"
-    composer create-project --prefer-dist --stability=dev yaasoft/yii2-yaa-cms mysite.com 
-    ```
-
-  2. Initialize the installed application
-
-     Execute the `init` command and select `dev` or `prod` as environment.
+     Выполните команду `init` и выберите `dev` или `prod` в качестве среды.
 
       ```bash
       cd /var/www/mysite.com/
       php init
       ```
   
-  3. Configurate your web server:
+  3. Настройка веб сервера:
 
-     For Apache config file could be the following:
+     Для Apache:
      
      ```apacheconf
-     <VirtualHost *:80>
-       ServerName mysite.com
-       ServerAlias www.mysite.com
-       DocumentRoot "/var/www/mysite.com/"
-       <Directory "/var/www/mysite.com/">
-         AllowOverride All
-       </Directory>
-     </VirtualHost>
+      <VirtualHost *:80>
+             ServerName frontend.test
+             DocumentRoot "/path/to/yii-application/frontend/web/"
+             
+             <Directory "/path/to/yii-application/frontend/web/">
+                 # use mod_rewrite for pretty URL support
+                 RewriteEngine on
+                 # If a directory or a file exists, use the request directly
+                 RewriteCond %{REQUEST_FILENAME} !-f
+                 RewriteCond %{REQUEST_FILENAME} !-d
+                 # Otherwise forward the request to index.php
+                 RewriteRule . index.php
+     
+                 # use index.php as index file
+                 DirectoryIndex index.php
+     
+                 # ...other settings...
+                 # Apache 2.4
+                 Require all granted
+                 
+                 ## Apache 2.2
+                 # Order allow,deny
+                 # Allow from all
+             </Directory>
+         </VirtualHost>
+         
+         <VirtualHost *:80>
+             ServerName backend.test
+             DocumentRoot "/path/to/yii-application/backend/web/"
+             
+             <Directory "/path/to/yii-application/backend/web/">
+                 # use mod_rewrite for pretty URL support
+                 RewriteEngine on
+                 # If a directory or a file exists, use the request directly
+                 RewriteCond %{REQUEST_FILENAME} !-f
+                 RewriteCond %{REQUEST_FILENAME} !-d
+                 # Otherwise forward the request to index.php
+                 RewriteRule . index.php
+     
+                 # use index.php as index file
+                 DirectoryIndex index.php
+     
+                 # ...other settings...
+                 # Apache 2.4
+                 Require all granted
+                 
+                 ## Apache 2.2
+                 # Order allow,deny
+                 # Allow from all
+             </Directory>
+         </VirtualHost>
      ```
-     For Nginx config file could be the following:
+     Для Nginx:
      
      ```nginx
      server {
-         charset      utf-8;
-         client_max_body_size  200M;
-         listen       80;
+             charset utf-8;
+             client_max_body_size 128M;
      
-         server_name  mysite.com;
-         root         /var/www/mysite.com;
+             listen 80; ## listen for ipv4
+             #listen [::]:80 default_server ipv6only=on; ## listen for ipv6
      
-         location / {
-             root  /var/www/mysite.com/frontend/web;
-             try_files  $uri /frontend/web/index.php?$args;
+             server_name frontend.test;
+             root        /path/to/yii-application/frontend/web/;
+             index       index.php;
      
-             # avoiding processing of calls to non-existing static files by Yii
-             location ~ \.(js|css|png|jpg|gif|swf|ico|pdf|mov|fla|zip|rar)$ {
-                 access_log  off;
-                 expires  360d;
-                 try_files  $uri =404;
+             access_log  /path/to/yii-application/log/frontend-access.log;
+             error_log   /path/to/yii-application/log/frontend-error.log;
+     
+             location / {
+                 # Redirect everything that isn't a real file to index.php
+                 try_files $uri $uri/ /index.php$is_args$args;
+             }
+     
+             # uncomment to avoid processing of calls to non-existing static files by Yii
+             #location ~ \.(js|css|png|jpg|gif|swf|ico|pdf|mov|fla|zip|rar)$ {
+             #    try_files $uri =404;
+             #}
+             #error_page 404 /404.html;
+     
+             # deny accessing php files for the /assets directory
+             location ~ ^/assets/.*\.php$ {
+                 deny all;
+             }
+     
+             location ~ \.php$ {
+                 include fastcgi_params;
+                 fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                 fastcgi_pass 127.0.0.1:9000;
+                 #fastcgi_pass unix:/var/run/php5-fpm.sock;
+                 try_files $uri =404;
+             }
+         
+             location ~* /\. {
+                 deny all;
              }
          }
+          
+         server {
+             charset utf-8;
+             client_max_body_size 128M;
+         
+             listen 80; ## listen for ipv4
+             #listen [::]:80 default_server ipv6only=on; ## listen for ipv6
+         
+             server_name backend.test;
+             root        /path/to/yii-application/backend/web/;
+             index       index.php;
+         
+             access_log  /path/to/yii-application/log/backend-access.log;
+             error_log   /path/to/yii-application/log/backend-error.log;
+         
+             location / {
+                 # Redirect everything that isn't a real file to index.php
+                 try_files $uri $uri/ /index.php$is_args$args;
+             }
+         
+             # uncomment to avoid processing of calls to non-existing static files by Yii
+             #location ~ \.(js|css|png|jpg|gif|swf|ico|pdf|mov|fla|zip|rar)$ {
+             #    try_files $uri =404;
+             #}
+             #error_page 404 /404.html;
      
-         location /admin {
-             alias  /var/www/mysite.com/backend/web;
-             rewrite  ^(/admin)/$ $1 permanent;
-             try_files  $uri /backend/web/index.php?$args;
+             # deny accessing php files for the /assets directory
+             location ~ ^/assets/.*\.php$ {
+                 deny all;
+             }
+     
+             location ~ \.php$ {
+                 include fastcgi_params;
+                 fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                 fastcgi_pass 127.0.0.1:9000;
+                 #fastcgi_pass unix:/var/run/php5-fpm.sock;
+                 try_files $uri =404;
+             }
+         
+             location ~* /\. {
+                 deny all;
+             }
          }
-     
-         # avoiding processing of calls to non-existing static files by Yii
-         location ~ ^/admin/(.+\.(js|css|png|jpg|gif|swf|ico|pdf|mov|fla|zip|rar))$ {
-             access_log  off;
-             expires  360d;
-     
-             rewrite  ^/admin/(.+)$ /backend/web/$1 break;
-             rewrite  ^/admin/(.+)/(.+)$ /backend/web/$1/$2 break;
-             try_files  $uri =404;
-         }
-     
-         location ~ \.php$ {
-             include  fastcgi_params;
-             # check your /etc/php5/fpm/pool.d/www.conf to see if PHP-FPM is listening on a socket or port
-             fastcgi_pass  unix:/var/run/php5-fpm.sock; ## listen for socket
-             #fastcgi_pass  127.0.0.1:9000; ## listen for port
-             fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
-             try_files  $uri =404;
-         }
-         #error_page  404 /404.html;
-     
-         location = /requirements.php {
-             deny all;
-         }
-     
-         location ~ \.(ht|svn|git) {
-             deny all;
-         }
-     }
      ```
      
        
-  4. Create a new database and adjust the `components['db']` configuration in `common/config/main-local.php` accordingly.
+  4. Создайте новую базу данных и внесите соответствующие изменения в секцию `components.db` файла `common/config/main-local.php`
 
-  5. Apply all migrations with console command `php yii migrate --migrationLookup=@yeesoft/yii2-yee-core/migrations/,@yeesoft/yii2-yee-auth/migrations/,@yeesoft/yii2-yee-settings/migrations/,@yeesoft/yii2-yee-menu/migrations/,@yeesoft/yii2-yee-user/migrations/,@yeesoft/yii2-yee-translation/migrations/,@yeesoft/yii2-yee-media/migrations/,@yeesoft/yii2-yee-post/migrations/,@yeesoft/yii2-yee-page/migrations/,@yeesoft/yii2-comments/migrations/,@yeesoft/yii2-yee-comment/migrations/,@yeesoft/yii2-yee-seo/migrations/`.
+  5. Примените миграции при помощи консольной команды 
+  ```migrate
+  php yii migrate --migrationLookup=@yeesoft/yii2-yee-core/migrations/,@yeesoft/yii2-yee-auth/migrations/,@yeesoft/yii2-yee-settings/migrations/,@yeesoft/yii2-yee-menu/migrations/,@yeesoft/yii2-yee-user/migrations/,@yeesoft/yii2-yee-translation/migrations/,@yeesoft/yii2-yee-media/migrations/,@yeesoft/yii2-yee-post/migrations/,@yeesoft/yii2-yee-page/migrations/,@yeesoft/yii2-comments/migrations/,@yeesoft/yii2-yee-comment/migrations/,@yeesoft/yii2-yee-seo/migrations/.
+  ```
 
-  6. Init root user with console command `php yii init-admin`.
+  6. Создаем Администратора `php yii init-admin`.
 
-  7. Configurate your mailer `['components']['mailer']` in `common/config/main-local.php`.
+  7. Настраиваем почту `['components']['mailer']` in `common/config/main-local.php`.
 
-#####Your `Yee CMS` application is installed. Visit your site `mysite.com` or admin panel `mysite.com/admin`, the site should work and message _Congratulations! You have successfully created your Yii-powered application_ should be displayed.
+#####Поздравляем! Вы успешно установили Yaa cms.
