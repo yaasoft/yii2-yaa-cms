@@ -19,19 +19,17 @@ YaaCMS - панель управления на Yii2 PHP Framework
    Если Composer установлен, вы можете установить приложение используя следующие команды:
     
    ```bash
-   cd /var/www/
    composer global require "fxp/composer-asset-plugin:^1.2.0"
    composer create-project --prefer-dist --stability=dev yaasoft/yii2-yaa-cms mysite.com 
    ```
 
  ### 2. Инициализируем установленное приложение
 
-     Выполните команду `init` и выберите `dev` или `prod` в качестве среды.
+   Выполните команду `init` и выберите `dev` или `prod` в качестве среды.
 
-      ```bash
-      cd /var/www/mysite.com/
-      php init
-      ```
+   ```bash
+   php init
+   ```
   
  ### 3. Настройка веб сервера:
 
@@ -194,7 +192,7 @@ YaaCMS - панель управления на Yii2 PHP Framework
  
  Выполните в консоли: `php yii init-admin` и введите данные.
 
- ###7. Настраиваем почту
+ ### 7. Настраиваем почту
  Внесите изменения в секцию `['components']['mailer']` в файле `common/config/main-local.php`.
 
 
