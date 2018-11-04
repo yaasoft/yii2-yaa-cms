@@ -35,8 +35,8 @@
     "yeesoft/yii2-yee-media": "~0.1.0",
     "yeesoft/yii2-yee-page": "~0.1.0",
     "yeesoft/yii2-yee-seo": "~0.1.0",
-    "yeesoft/yii2-comments": "~0.1.0",
-    "yeesoft/yii2-yee-comment": "~0.1.0"
+    "yaasoft/yii2-comments": "~0.1.2",
+    "yaasoft/yii2-yee-comment": "~0.1.2"
   },
   "require-dev": {
     "yiisoft/yii2-codeception": "~2.0.5",
